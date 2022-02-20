@@ -20,8 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="hello-world"
-exercism download --exercise=$exercise --track=csharp
+exercism download --exercise="hello-world" --track=csharp
 
 cd csharp/hello-world # CD in
 # Write your code in ...cs
