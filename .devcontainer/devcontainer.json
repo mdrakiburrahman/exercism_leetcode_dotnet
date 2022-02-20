@@ -34,6 +34,7 @@
 		"github.copilot",
 		// Dotnet stuff
 		"ms-dotnettools.vscode-dotnet-runtime",
+		"ms-dotnettools.csharp",
 		// VSCode stuff
 		"esbenp.prettier-vscode",
 		"wakatime.vscode-wakatime"

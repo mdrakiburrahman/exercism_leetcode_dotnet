@@ -1,8 +1,8 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.191.0/containers/dotnetcore/.devcontainer/base.Dockerfile
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/main/containers/dotnet
 
-# [Choice] .NET Core version: 5.0, 3.1, 2.1
-ARG VARIANT="3.1"
-FROM mcr.microsoft.com/vscode/devcontainers/dotnetcore:0-${VARIANT}
+# [Choice] .NET Core version: 3.1 / 3.1-focal, 5.0 / 5.0-focal, 6.0 /6.0-bullseye, 6.0-focal, 5.0-bullseye, 3.1-bullseye
+ARG VARIANT="6.0-focal"
+FROM mcr.microsoft.com/vscode/devcontainers/dotnet:${VARIANT}
 
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="none"

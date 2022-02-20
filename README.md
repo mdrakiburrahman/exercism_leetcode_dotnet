@@ -4,7 +4,7 @@ My solutions for Dotnet track at [Exercism](https://exercism.org/profiles/mdraki
 
 ## Track downloader
 
-``` bash
+```bash
 # Python setup
 python3 -m venv env # Create venv
 source env/bin/activate
@@ -20,23 +20,40 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="first-last"
+exercise="hello-world"
 exercism download --exercise=$exercise --track=csharp
 
-cd $exercise # CD in
+cd csharp/hello-world # CD in
 # Write your code in ...cs
 
 # Test
+dotnet test
+#   Determining projects to restore...
+#   All projects are up-to-date for restore.
+#   HelloWorld -> /workspaces/exercism_dotnet/csharp/hello-world/bin/Debug/net6.0/HelloWorld.dll
+# Test run for /workspaces/exercism_dotnet/csharp/hello-world/bin/Debug/net6.0/HelloWorld.dll (.NETCoreApp,Version=v6.0)
+# Microsoft (R) Test Execution Command Line Tool Version 17.0.0
+# Copyright (c) Microsoft Corporation.  All rights reserved.
+
+# Starting test execution, please wait...
+# A total of 1 test files matched the specified pattern.
+
+# Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - /workspaces/exercism_dotnet/csharp/hello-world/bin/Debug/net6.0/HelloWorld.dll (net6.0)
 
 # Submit
+exercism submit HelloWorld.cs
+# Your solution has been submitted successfully.
+#     View it at:
 
+
+#     https://exercism.org/tracks/csharp/exercises/hello-world
 ```
 
 ## Progress
 
-| Exercise                          | Status      | Description                                                                                                                                                                                                                                                                                                           |
-| --------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Hello World                       | `In-progress` | The classical introductory exercise. Just say "Hello, World!".                                                                                                                                                                                                                                                        |
+| Exercise                          | Status        | Description                                                                                                                                                                                                                                                                                                           |
+| --------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hello World                       | `Completed`   | The classical introductory exercise. Just say "Hello, World!".                                                                                                                                                                                                                                                        |
 | Bird Watcher                      | `Not started` | Learn about arrays by keeping track of how many birds visit your garden.                                                                                                                                                                                                                                              |
 | Lucian's Luscious Lasagna         | `Not started` | Learn about the basics of C# by following a lasagna recipe.                                                                                                                                                                                                                                                           |
 | Annalyn's Infiltration            | `Not started` | Learn about booleans while helping Annalyn rescue her friend.                                                                                                                                                                                                                                                         |
@@ -200,6 +217,3 @@ cd $exercise # CD in
 | Zipper                            | `Not started` | Creating a zipper for a binary tree.                                                                                                                                                                                                                                                                                  |
 | Reverse String                    | `Not started` | Reverse a string.                                                                                                                                                                                                                                                                                                     |
 | Rna Transcription                 | `Not started` | Given a DNA strand, return its RNA Complement Transcription.                                                                                                                                                                                                                                                          |
-
-
-
