@@ -20,9 +20,11 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercism download --exercise="hello-world" --track=csharp
-
-cd csharp/hello-world # CD in
+exercise="annalyns-infiltration" # <- Replace here
+exercism download --exercise=$exercise --track=csharp
+# Move to root
+mv csharp/$exercise $exercise
+cd $exercise # CD in
 # Write your code in ...cs
 
 # Test
@@ -54,8 +56,8 @@ exercism submit HelloWorld.cs
 | --------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hello World                       | `Completed`   | The classical introductory exercise. Just say "Hello, World!".                                                                                                                                                                                                                                                        |
 | Bird Watcher                      | `Not started` | Learn about arrays by keeping track of how many birds visit your garden.                                                                                                                                                                                                                                              |
-| Lucian's Luscious Lasagna         | `Not started` | Learn about the basics of C# by following a lasagna recipe.                                                                                                                                                                                                                                                           |
-| Annalyn's Infiltration            | `Not started` | Learn about booleans while helping Annalyn rescue her friend.                                                                                                                                                                                                                                                         |
+| Lucian's Luscious Lasagna         | `Completed` | Learn about the basics of C# by following a lasagna recipe.                                                                                                                                                                                                                                                           |
+| Annalyn's Infiltration            | `Completed` | Learn about booleans while helping Annalyn rescue her friend.                                                                                                                                                                                                                                                         |
 | Secure Munchester United          | `Not started` | Learn about casting by creating security passes.                                                                                                                                                                                                                                                                      |
 | Squeaky Clean                     | `Not started` | Learn about characters and StringBuilder by cleaning strings.                                                                                                                                                                                                                                                         |
 | Elon's Toys                       | `Not started` | Learn about classes by working on a remote controlled car.                                                                                                                                                                                                                                                            |
