@@ -20,13 +20,15 @@ deactivate # Deactivate venv
 
 ```bash
 # Ensure you are in root - /workspace/exercism_dotnet
+
 # Download a new exercise
-exercise="tim-from-marketing" # <- Replace here
+exercise="roll-the-die" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
 cd $exercise # CD in
-# Write your code in ...cs
+
+# Write your code in Exercise-name.cs
 
 # Test
 dotnet test
@@ -86,7 +88,7 @@ exercism submit HelloWorld.cs
 | Hyperinflation Hits Hyperia       | `Not started` | Learn about arithmetic overflow by dealing with hyperinflation.                                                                                                                                                                                                                                                       |
 | Building Telemetry                | `Not started` | Learn about parameter modifiers by adding telemetry to a car.                                                                                                                                                                                                                                                         |
 | Weighing Machine                  | `Not started` | Learn about properties by modelling a weighing machine.                                                                                                                                                                                                                                                               |
-| Roll the Die!                     | `Not started` | Learn about randomness by generating numbers in a game.                                                                                                                                                                                                                                                               |
+| Roll the Die!                     | `Completed`   | Learn about randomness by generating numbers in a game.                                                                                                                                                                                                                                                               |
 | Parsing Log Files                 | `Not started` | Learn about regular expressions by parsing logs.                                                                                                                                                                                                                                                                      |
 | Object Relational Mapping         | `Not started` | Learn about the IDisposable interface by implementing an ORM system.                                                                                                                                                                                                                                                  |
 | Orm in One Go                     | `Not started` | Learn about the using block by implementing an ORM system.                                                                                                                                                                                                                                                            |
