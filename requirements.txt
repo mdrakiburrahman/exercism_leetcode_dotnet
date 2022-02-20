@@ -1,0 +1,3 @@
+# Python helpers
+jmespath
+requests

@@ -19,6 +19,12 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     && apt-get -y install git iproute2 procps bash-completion
 
+# Install Python
+USER root
+RUN apt-get update -y \
+    && apt-get install -y python3.9 \
+    && apt-get install -y python3.8-venv
+
 # Install Exercism stuff
 RUN wget "https://github.com/exercism/cli/releases/download/$EXERCISM_CLI_VERSION/exercism-linux-64bit.tgz" && \
     tar xzf exercism-linux-64bit.tgz && \
