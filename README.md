@@ -21,7 +21,7 @@ deactivate # Deactivate venv
 ```bash
 # Ensure you are in root - /workspace/exercism_dotnet
 # Download a new exercise
-exercise="interest-is-interesting" # <- Replace here
+exercise="log-analysis" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -97,7 +97,7 @@ exercism submit HelloWorld.cs
 | Beauty Salon Goes Global          | `Not started` | Learn about the DateTime class by helping a salon deal with timezones.                                                                                                                                                                                                                                                |
 | Phone Number Analysis             | `Not started` | Learn about tuples by analysing phone numbers.                                                                                                                                                                                                                                                                        |
 | Instruments of Texas              | `Not started` | Learn about exceptions by handling adding multiplication to a calculator.                                                                                                                                                                                                                                             |
-| Log Analysis                      | `Not started` | Learn about extension-methods by analysing logs.                                                                                                                                                                                                                                                                      |
+| Log Analysis                      | `Completed`   | Learn about extension-methods by analysing logs.                                                                                                                                                                                                                                                                      |
 | Two Fer                           | `Not started` | Create a sentence of the form "One for X, one for me.".                                                                                                                                                                                                                                                               |
 | Leap                              | `Not started` | Given a year, report if it is a leap year.                                                                                                                                                                                                                                                                            |
 | Gigasecond                        | `Not started` | Given a moment, determine the moment that would be after a gigasecond has passed.                                                                                                                                                                                                                                     |
