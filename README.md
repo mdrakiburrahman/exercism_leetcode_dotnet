@@ -22,7 +22,7 @@ deactivate # Deactivate venv
 # Ensure you are in root - /workspace/exercism_dotnet
 
 # Download a new exercise
-exercise="roll-the-die" # <- Replace here
+exercise="elons-toys" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -63,7 +63,7 @@ exercism submit HelloWorld.cs
 | Annalyn's Infiltration            | `Completed`   | Learn about booleans while helping Annalyn rescue her friend.                                                                                                                                                                                                                                                         |
 | Secure Munchester United          | `Not started` | Learn about casting by creating security passes.                                                                                                                                                                                                                                                                      |
 | Squeaky Clean                     | `Not started` | Learn about characters and StringBuilder by cleaning strings.                                                                                                                                                                                                                                                         |
-| Elon's Toys                       | `Not started` | Learn about classes by working on a remote controlled car.                                                                                                                                                                                                                                                            |
+| Elon's Toys                       | `Completed`   | Learn about classes by working on a remote controlled car.                                                                                                                                                                                                                                                            |
 | Authentication System             | `Not started` | Learn about the const and readonly keywords by refactoring an authentication system.                                                                                                                                                                                                                                  |
 | Need for Speed                    | `Not started` | Learn about classes by creating cars.                                                                                                                                                                                                                                                                                 |
 | Booking up for Beauty             | `Not started` | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
