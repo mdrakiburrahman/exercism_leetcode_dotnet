@@ -21,7 +21,7 @@ deactivate # Deactivate venv
 ```bash
 # Ensure you are in root - /workspace/exercism_dotnet
 # Download a new exercise
-exercise="cars-assemble" # <- Replace here
+exercise="interest-is-interesting" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -71,7 +71,7 @@ exercism submit HelloWorld.cs
 | Calculator Conundrum              | `Not started` | Learn about error handling by working on a simple calculator.                                                                                                                                                                                                                                                         |
 | The Weather in Deather            | `Not started` | Learn about expressions by improving legacy code.                                                                                                                                                                                                                                                                     |
 | Attack of the Trolls              | `Not started` | Learn about flag enumerations by checking permissions of user accounts on an internet forum.                                                                                                                                                                                                                          |
-| Interest is Interesting           | `Not started` | Learn about floating point numbers by adding interest to savings accounts.                                                                                                                                                                                                                                            |
+| Interest is Interesting           | `Completed`   | Learn about floating point numbers by adding interest to savings accounts.                                                                                                                                                                                                                                            |
 | Wizards and Warriors              | `Not started` | Learn about inheritance by creating an RPG.                                                                                                                                                                                                                                                                           |
 | Hyper-optimized Telemetry         | `Not started` | Learn about bit conversion by implementing a message protocol.                                                                                                                                                                                                                                                        |
 | Remote Control Competition        | `Not started` | Learn about interfaces by working on cars.                                                                                                                                                                                                                                                                            |
