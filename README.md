@@ -21,7 +21,7 @@ deactivate # Deactivate venv
 ```bash
 # Ensure you are in root - /workspace/exercism_dotnet
 # Download a new exercise
-exercise="log-analysis" # <- Replace here
+exercise="phone-number-analysis" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -95,7 +95,7 @@ exercism submit HelloWorld.cs
 | Land Grab in Space                | `Not started` | Learn about structs by improving the performance of a land claim system.                                                                                                                                                                                                                                              |
 | Football Match Reports            | `Not started` | Learn about switches by developing a system to report on soccer matches.                                                                                                                                                                                                                                              |
 | Beauty Salon Goes Global          | `Not started` | Learn about the DateTime class by helping a salon deal with timezones.                                                                                                                                                                                                                                                |
-| Phone Number Analysis             | `Not started` | Learn about tuples by analysing phone numbers.                                                                                                                                                                                                                                                                        |
+| Phone Number Analysis             | `Completed`   | Learn about tuples by analysing phone numbers.                                                                                                                                                                                                                                                                        |
 | Instruments of Texas              | `Not started` | Learn about exceptions by handling adding multiplication to a calculator.                                                                                                                                                                                                                                             |
 | Log Analysis                      | `Completed`   | Learn about extension-methods by analysing logs.                                                                                                                                                                                                                                                                      |
 | Two Fer                           | `Not started` | Create a sentence of the form "One for X, one for me.".                                                                                                                                                                                                                                                               |
