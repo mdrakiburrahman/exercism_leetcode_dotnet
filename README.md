@@ -21,7 +21,7 @@ deactivate # Deactivate venv
 ```bash
 # Ensure you are in root - /workspace/exercism_dotnet
 # Download a new exercise
-exercise="phone-number-analysis" # <- Replace here
+exercise="tim-from-marketing" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -79,7 +79,7 @@ exercism submit HelloWorld.cs
 | Wizards and Warriors 2.0          | `Not started` | Learn about classes by extending an RPG.                                                                                                                                                                                                                                                                              |
 | Red vs. Blue: Darwin Style        | `Not started` | Learn about namespaces by managing car development teams.                                                                                                                                                                                                                                                             |
 | Remote Control Cleanup            | `Not started` | Learn about nested types by refactoring a car class.                                                                                                                                                                                                                                                                  |
-| Tim from Marketing                | `Not started` | Learn about nullables by printing name badges.                                                                                                                                                                                                                                                                        |
+| Tim from Marketing                | `Completed`   | Learn about nullables by printing name badges.                                                                                                                                                                                                                                                                        |
 | Cars, Assemble!                   | `Completed`   | Learn about numbers by analyzing the production of an assembly line.                                                                                                                                                                                                                                                  |
 | Developer Privileges              | `Not started` | Learn about object initialisers by adding functionality to an authentication system.                                                                                                                                                                                                                                  |
 | Hyperia Forex                     | `Not started` | Learn about operator overloading by introducing a new currency to a bank.                                                                                                                                                                                                                                             |
