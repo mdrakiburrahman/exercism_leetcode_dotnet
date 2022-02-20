@@ -19,8 +19,9 @@ deactivate # Deactivate venv
 ## Useful Commands
 
 ```bash
+# Ensure you are in root - /workspace/exercism_dotnet
 # Download a new exercise
-exercise="log-levels" # <- Replace here
+exercise="cars-assemble" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -79,7 +80,7 @@ exercism submit HelloWorld.cs
 | Red vs. Blue: Darwin Style        | `Not started` | Learn about namespaces by managing car development teams.                                                                                                                                                                                                                                                             |
 | Remote Control Cleanup            | `Not started` | Learn about nested types by refactoring a car class.                                                                                                                                                                                                                                                                  |
 | Tim from Marketing                | `Not started` | Learn about nullables by printing name badges.                                                                                                                                                                                                                                                                        |
-| Cars, Assemble!                   | `Not started` | Learn about numbers by analyzing the production of an assembly line.                                                                                                                                                                                                                                                  |
+| Cars, Assemble!                   | `Completed`   | Learn about numbers by analyzing the production of an assembly line.                                                                                                                                                                                                                                                  |
 | Developer Privileges              | `Not started` | Learn about object initialisers by adding functionality to an authentication system.                                                                                                                                                                                                                                  |
 | Hyperia Forex                     | `Not started` | Learn about operator overloading by introducing a new currency to a bank.                                                                                                                                                                                                                                             |
 | Hyperinflation Hits Hyperia       | `Not started` | Learn about arithmetic overflow by dealing with hyperinflation.                                                                                                                                                                                                                                                       |
