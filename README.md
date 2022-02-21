@@ -20,8 +20,8 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="bird-watcher" # <---------- Replace here
-cd "/workspace/exercism_dotnet"
+exercise="wizards-and-warriors" # <---------- Replace here
+cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -73,7 +73,7 @@ exercism submit HelloWorld.cs
 | The Weather in Deather            | `Not started` | Learn about expressions by improving legacy code.                                                                                                                                                                                                                                                                     |
 | Attack of the Trolls              | `Not started` | Learn about flag enumerations by checking permissions of user accounts on an internet forum.                                                                                                                                                                                                                          |
 | Interest is Interesting           | `Completed`   | Learn about floating point numbers by adding interest to savings accounts.                                                                                                                                                                                                                                            |
-| Wizards and Warriors              | `Not started` | Learn about inheritance by creating an RPG.                                                                                                                                                                                                                                                                           |
+| Wizards and Warriors              | `Completed` | Learn about inheritance by creating an RPG.                                                                                                                                                                                                                                                                           |
 | Hyper-optimized Telemetry         | `Not started` | Learn about bit conversion by implementing a message protocol.                                                                                                                                                                                                                                                        |
 | Remote Control Competition        | `Not started` | Learn about interfaces by working on cars.                                                                                                                                                                                                                                                                            |
 | Tracks on Tracks on Tracks        | `Not started` | Learn about lists by keeping track of programming languages you want to learn.                                                                                                                                                                                                                                        |
