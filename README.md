@@ -22,7 +22,7 @@ deactivate # Deactivate venv
 # Ensure you are in root - /workspace/exercism_dotnet
 
 # Download a new exercise
-exercise="need-for-speed" # <- Replace here
+exercise="booking-up-for-beauty" # <---------- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -66,7 +66,7 @@ exercism submit HelloWorld.cs
 | Elon's Toys                       | `Completed`   | Learn about classes by working on a remote controlled car.                                                                                                                                                                                                                                                            |
 | Authentication System             | `Not started` | Learn about the const and readonly keywords by refactoring an authentication system.                                                                                                                                                                                                                                  |
 | Need for Speed                    | `Completed`   | Learn about classes by creating cars.                                                                                                                                                                                                                                                                                 |
-| Booking up for Beauty             | `Not started` | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
+| Booking up for Beauty             | `Completed`   | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
 | International Calling Connoisseur | `Not started` | Learn about dictionaries by keeping track of international dialling codes.                                                                                                                                                                                                                                            |
 | Logs, Logs, Logs!                 | `Not started` | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
 | Face ID 2.0                       | `Not started` | Learn about equality by adding face recognition to a login process.                                                                                                                                                                                                                                                   |
