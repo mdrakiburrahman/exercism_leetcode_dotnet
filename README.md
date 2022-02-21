@@ -22,7 +22,7 @@ deactivate # Deactivate venv
 # Ensure you are in root - /workspace/exercism_dotnet
 
 # Download a new exercise
-exercise="elons-toys" # <- Replace here
+exercise="need-for-speed" # <- Replace here
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
@@ -65,7 +65,7 @@ exercism submit HelloWorld.cs
 | Squeaky Clean                     | `Not started` | Learn about characters and StringBuilder by cleaning strings.                                                                                                                                                                                                                                                         |
 | Elon's Toys                       | `Completed`   | Learn about classes by working on a remote controlled car.                                                                                                                                                                                                                                                            |
 | Authentication System             | `Not started` | Learn about the const and readonly keywords by refactoring an authentication system.                                                                                                                                                                                                                                  |
-| Need for Speed                    | `Not started` | Learn about classes by creating cars.                                                                                                                                                                                                                                                                                 |
+| Need for Speed                    | `Completed`   | Learn about classes by creating cars.                                                                                                                                                                                                                                                                                 |
 | Booking up for Beauty             | `Not started` | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
 | International Calling Connoisseur | `Not started` | Learn about dictionaries by keeping track of international dialling codes.                                                                                                                                                                                                                                            |
 | Logs, Logs, Logs!                 | `Not started` | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
