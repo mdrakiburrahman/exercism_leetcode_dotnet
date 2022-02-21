@@ -19,16 +19,15 @@ deactivate # Deactivate venv
 ## Useful Commands
 
 ```bash
-# Ensure you are in root - /workspace/exercism_dotnet
-
 # Download a new exercise
-exercise="booking-up-for-beauty" # <---------- Replace here
+exercise="bird-watcher" # <---------- Replace here
+cd "/workspace/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
 mv csharp/$exercise $exercise
 cd $exercise # CD in
 
-# Write your code in Exercise-name.cs
+# Write your code in ExerciseName.cs
 
 # Test
 dotnet test
@@ -58,7 +57,7 @@ exercism submit HelloWorld.cs
 | Exercise                          | Status        | Description                                                                                                                                                                                                                                                                                                           |
 | --------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hello World                       | `Completed`   | The classical introductory exercise. Just say "Hello, World!".                                                                                                                                                                                                                                                        |
-| Bird Watcher                      | `Not started` | Learn about arrays by keeping track of how many birds visit your garden.                                                                                                                                                                                                                                              |
+| Bird Watcher                      | `Completed`   | Learn about arrays by keeping track of how many birds visit your garden.                                                                                                                                                                                                                                              |
 | Lucian's Luscious Lasagna         | `Completed`   | Learn about the basics of C# by following a lasagna recipe.                                                                                                                                                                                                                                                           |
 | Annalyn's Infiltration            | `Completed`   | Learn about booleans while helping Annalyn rescue her friend.                                                                                                                                                                                                                                                         |
 | Secure Munchester United          | `Not started` | Learn about casting by creating security passes.                                                                                                                                                                                                                                                                      |
