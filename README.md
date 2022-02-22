@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="wizards-and-warriors" # <---------- Replace here
+exercise="tracks-on-tracks-on-tracks" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -76,7 +76,7 @@ exercism submit HelloWorld.cs
 | Wizards and Warriors              | `Completed`   | Learn about inheritance by creating an RPG.                                                                                                                                                                                                                                                                           |
 | Hyper-optimized Telemetry         | `Not started` | Learn about bit conversion by implementing a message protocol.                                                                                                                                                                                                                                                        |
 | Remote Control Competition        | `Not started` | Learn about interfaces by working on cars.                                                                                                                                                                                                                                                                            |
-| Tracks on Tracks on Tracks        | `Not started` | Learn about lists by keeping track of programming languages you want to learn.                                                                                                                                                                                                                                        |
+| Tracks on Tracks on Tracks        | `Completed`   | Learn about lists by keeping track of programming languages you want to learn.                                                                                                                                                                                                                                        |
 | Wizards and Warriors 2.0          | `Not started` | Learn about classes by extending an RPG.                                                                                                                                                                                                                                                                              |
 | Red vs. Blue: Darwin Style        | `Not started` | Learn about namespaces by managing car development teams.                                                                                                                                                                                                                                                             |
 | Remote Control Cleanup            | `Not started` | Learn about nested types by refactoring a car class.                                                                                                                                                                                                                                                                  |
