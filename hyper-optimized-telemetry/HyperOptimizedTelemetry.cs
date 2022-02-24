@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic; // Need for List
 
 
-Console.WriteLine(TelemetryBuffer.FromBuffer(new byte[] {0xfe, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}));
+Console.WriteLine(TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 })); // 32768
+
+Console.WriteLine(TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 })); // 32767
 
 public static class TelemetryBuffer
 {
@@ -14,7 +16,7 @@ public static class TelemetryBuffer
         // 3. Prepend appropriately in byte[0]
         
         bool signed = false;
-        byte[] data = new byte[8]; // Payload is 8
+        byte[] data = new byte[8]; // Max payload is 8
 
         switch (reading)
         {
@@ -97,16 +99,19 @@ public static class TelemetryBuffer
 
         var reading = BitConverter.ToInt64(buffer, 1);
         Console.WriteLine($"Reading: {reading}");
+        Console.WriteLine($"Prefix: {prefix}");
 
         if (Math.Abs(prefix) <= 8) 
         { // Unsigned
+            Console.WriteLine($"Prefix is unsigned");
             return reading; // Always positive
         } else 
         { 
+            Console.WriteLine($"Prefix is signed");
             // Signed
             switch (reading)
             {
-                case <= long.MinValue when reading >= 1:
+                case <= long.MaxValue when reading >= 1:
                     Console.WriteLine($"negative!");
                     return -reading;
                 default:
