@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="tracks-on-tracks-on-tracks" # <---------- Replace here
+exercise="hyper-optimized-telemetry" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
