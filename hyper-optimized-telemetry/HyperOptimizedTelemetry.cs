@@ -1,10 +1,4 @@
 using System;
-using System.Collections.Generic; // Need for List
-
-
-Console.WriteLine(TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 })); // 32768
-
-Console.WriteLine(TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 })); // 32767
 
 public static class TelemetryBuffer
 {
@@ -56,7 +50,6 @@ public static class TelemetryBuffer
                 signed = true;
                 break;
             default:
-                Console.WriteLine($"{reading} is out of range");
                 throw new ArgumentOutOfRangeException();        
         }
 
@@ -81,43 +74,21 @@ public static class TelemetryBuffer
 
     public static long FromBuffer(byte[] buffer)
     {
-        Console.WriteLine($"Buffer: {String.Join(", ", buffer)}");
-
-        long result;
-
-        // Check if first byte is not included in range
-        var acceptablePrefixes = new List<int> { -8, -4, -2, 2, 4, 8 };
-        var prefix = (int)buffer[0];
-
-        // If not, return 0
-        if (!acceptablePrefixes.Contains(prefix) && !acceptablePrefixes.Contains(256 - prefix))
+        // BitConverter.To___ converts sign based on casting provided, so we just need to use the prefix to cast it properly
+        switch ((int)buffer[0])
         {
-            Console.WriteLine($"{prefix} is not an acceptable prefix");
-            result = 0;
-            return result;
-        }
-
-        var reading = BitConverter.ToInt64(buffer, 1);
-        Console.WriteLine($"Reading: {reading}");
-        Console.WriteLine($"Prefix: {prefix}");
-
-        if (Math.Abs(prefix) <= 8) 
-        { // Unsigned
-            Console.WriteLine($"Prefix is unsigned");
-            return reading; // Always positive
-        } else 
-        { 
-            Console.WriteLine($"Prefix is signed");
-            // Signed
-            switch (reading)
-            {
-                case <= long.MaxValue when reading >= 1:
-                    Console.WriteLine($"negative!");
-                    return -reading;
-                default:
-                    Console.WriteLine($"positive!");
-                    return reading;
-            }
+            case 2:
+                return BitConverter.ToUInt16(buffer, 1);
+            case 4:
+                return BitConverter.ToUInt32(buffer, 1);
+            case 254:
+                return BitConverter.ToInt16(buffer, 1);
+            case 252:
+                return BitConverter.ToInt32(buffer, 1);
+            case 248:
+                return BitConverter.ToInt64(buffer, 1);
+            default:
+                return 0;
         }
     }
 }
