@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="international-calling-connoisseur" # <---------- Replace here
+exercise="beauty-salon-goes-global" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -66,7 +66,7 @@ exercism submit HelloWorld.cs
 | Authentication System             | `Not started` | Learn about the const and readonly keywords by refactoring an authentication system.                                                                                                                                                                                                                                  |
 | Need for Speed                    | `Completed`   | Learn about classes by creating cars.                                                                                                                                                                                                                                                                                 |
 | Booking up for Beauty             | `Completed`   | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
-| International Calling Connoisseur | `Not started` | Learn about dictionaries by keeping track of international dialling codes.                                                                                                                                                                                                                                            |
+| International Calling Connoisseur | `Completed`   | Learn about dictionaries by keeping track of international dialling codes.                                                                                                                                                                                                                                            |
 | Logs, Logs, Logs!                 | `Not started` | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
 | Face ID 2.0                       | `Not started` | Learn about equality by adding face recognition to a login process.                                                                                                                                                                                                                                                   |
 | Calculator Conundrum              | `Not started` | Learn about error handling by working on a simple calculator.                                                                                                                                                                                                                                                         |
