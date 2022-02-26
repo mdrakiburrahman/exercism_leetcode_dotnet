@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="squeaky-clean" # <---------- Replace here
+exercise="football-match-reports" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -94,7 +94,7 @@ exercism submit HelloWorld.cs
 | High School Sweethearts           | `Not started` | Learn about string formatting by helping high school sweethearts profess their love on social media.                                                                                                                                                                                                                  |
 | Log Levels                        | `Completed`   | Learn about strings by processing logs.                                                                                                                                                                                                                                                                               |
 | Land Grab in Space                | `Not started` | Learn about structs by improving the performance of a land claim system.                                                                                                                                                                                                                                              |
-| Football Match Reports            | `Not started` | Learn about switches by developing a system to report on soccer matches.                                                                                                                                                                                                                                              |
+| Football Match Reports            | `Completed` | Learn about switches by developing a system to report on soccer matches.                                                                                                                                                                                                                                              |
 | Beauty Salon Goes Global          | `Not started` | Learn about the DateTime class by helping a salon deal with timezones.                                                                                                                                                                                                                                                |
 | Phone Number Analysis             | `Completed`   | Learn about tuples by analysing phone numbers.                                                                                                                                                                                                                                                                        |
 | Instruments of Texas              | `Not started` | Learn about exceptions by handling adding multiplication to a calculator.                                                                                                                                                                                                                                             |
