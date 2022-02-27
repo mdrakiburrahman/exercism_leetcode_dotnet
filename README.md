@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="logs-logs-logs" # <---------- Replace here
+exercise="attack-of-the-trolls" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -53,7 +53,9 @@ exercism submit HelloWorld.cs
 ```
 
 ## To test locally in `csproj`
+
 Add the following line in:
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -88,11 +90,11 @@ Add the following line in:
 | Need for Speed                    | `Completed`   | Learn about classes by creating cars.                                                                                                                                                                                                                                                                                 |
 | Booking up for Beauty             | `Completed`   | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
 | International Calling Connoisseur | `Completed`   | Learn about dictionaries by keeping track of international dialling codes.                                                                                                                                                                                                                                            |
-| Logs, Logs, Logs!                 | `Completed` | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
+| Logs, Logs, Logs!                 | `Completed`   | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
 | Face ID 2.0                       | `Not started` | Learn about equality by adding face recognition to a login process.                                                                                                                                                                                                                                                   |
 | Calculator Conundrum              | `Not started` | Learn about error handling by working on a simple calculator.                                                                                                                                                                                                                                                         |
 | The Weather in Deather            | `Not started` | Learn about expressions by improving legacy code.                                                                                                                                                                                                                                                                     |
-| Attack of the Trolls              | `Not started` | Learn about flag enumerations by checking permissions of user accounts on an internet forum.                                                                                                                                                                                                                          |
+| Attack of the Trolls              | `Completed` | Learn about flag enumerations by checking permissions of user accounts on an internet forum.                                                                                                                                                                                                                          |
 | Interest is Interesting           | `Completed`   | Learn about floating point numbers by adding interest to savings accounts.                                                                                                                                                                                                                                            |
 | Wizards and Warriors              | `Completed`   | Learn about inheritance by creating an RPG.                                                                                                                                                                                                                                                                           |
 | Hyper-optimized Telemetry         | `Completed`   | Learn about bit conversion by implementing a message protocol.                                                                                                                                                                                                                                                        |
