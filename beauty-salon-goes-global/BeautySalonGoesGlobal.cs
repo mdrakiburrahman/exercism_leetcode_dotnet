@@ -1,21 +1,6 @@
 using System;
 using System.Globalization;
 
-
-
-Console.WriteLine($"1: {Appointment.ShowLocalTime(new DateTime(2030, 7, 25, 13, 45, 0))}");
-
-Console.WriteLine($"2: {Appointment.Schedule("7/25/2030 13:45:00", Location.Paris)}");
-
-Console.WriteLine($"3: {Appointment.GetAlertTime(new DateTime(2030, 7, 25, 14, 45, 0), AlertLevel.Early)}");
-Console.WriteLine($"3: {Appointment.GetAlertTime(new DateTime(2030, 7, 25, 14, 45, 0), AlertLevel.Late)}");
-
-Console.WriteLine($"4: {Appointment.HasDaylightSavingChanged(new DateTime(2020, 3, 30, 14, 45, 0), Location.London)}");
-Console.WriteLine($"4: {Appointment.HasDaylightSavingChanged(new DateTime(2019, 3, 13, 0, 0, 0), Location.NewYork)}");
-Console.WriteLine($"4: {Appointment.HasDaylightSavingChanged(new DateTime(2019, 12, 25, 0, 0, 0), Location.NewYork)}");
-
-Console.WriteLine($"5: {Appointment.NormalizeDateTime("25/11/2019 13:45:00", Location.London)}");
-
 public enum Location
 {
     NewYork,
@@ -102,17 +87,13 @@ public static class Appointment
 
     public static DateTime NormalizeDateTime(string dtStr, Location location)
     {
-        DateTime dateResult;
-
-        // Parse a date and time with no styles.
-        string dateString = "03/01/2009 10:00 AM";
-        CultureInfo culture = GetCultureInfo(location);
-        DateTimeStyles styles = DateTimeStyles.None;
-        if (DateTime.TryParse(dateString, culture, styles, out dateResult))
-            Console.WriteLine("{0} converted to {1} {2}.", dateString, dateResult, dateResult.Kind);
-        else
-            Console.WriteLine("Unable to convert {0} to a date and time.", dateString);
-
-        return DateTime.MinValue;
+        DateTime dateResult; // Return variable
+        CultureInfo culture = GetCultureInfo(location); // Get culture from custom method
+        if (!DateTime.TryParse(dtStr, culture, DateTimeStyles.None, out dateResult)) // If pasring is successful, updates TryParse updates dateResult
+        {
+            // Otherwise, we catch the boolean and return the min value
+            dateResult = DateTime.MinValue;
+        }   
+        return dateResult;
     }
 }
