@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="beauty-salon-goes-global" # <---------- Replace here
+exercise="logs-logs-logs" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -52,6 +52,27 @@ exercism submit HelloWorld.cs
 #     https://exercism.org/tracks/csharp/exercises/hello-world
 ```
 
+## To test locally in `csproj`
+Add the following line in:
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <!-- <GenerateProgramFile>false</GenerateProgramFile> --> // <-- Uncomment this line and put into csproj
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+    <PackageReference Include="Exercism.Tests" Version="0.1.0-beta1" />
+  </ItemGroup>
+
+</Project>
+
+```
+
 ## Progress
 
 | Exercise                          | Status        | Description                                                                                                                                                                                                                                                                                                           |
@@ -67,7 +88,7 @@ exercism submit HelloWorld.cs
 | Need for Speed                    | `Completed`   | Learn about classes by creating cars.                                                                                                                                                                                                                                                                                 |
 | Booking up for Beauty             | `Completed`   | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
 | International Calling Connoisseur | `Completed`   | Learn about dictionaries by keeping track of international dialling codes.                                                                                                                                                                                                                                            |
-| Logs, Logs, Logs!                 | `Not started` | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
+| Logs, Logs, Logs!                 | `Completed` | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
 | Face ID 2.0                       | `Not started` | Learn about equality by adding face recognition to a login process.                                                                                                                                                                                                                                                   |
 | Calculator Conundrum              | `Not started` | Learn about error handling by working on a simple calculator.                                                                                                                                                                                                                                                         |
 | The Weather in Deather            | `Not started` | Learn about expressions by improving legacy code.                                                                                                                                                                                                                                                                     |
