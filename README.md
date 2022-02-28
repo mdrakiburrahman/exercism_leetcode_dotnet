@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="calculator-conundrum" # <---------- Replace here
+exercise="secure-munchester-united" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -31,13 +31,6 @@ cd $exercise # CD in
 
 # Test
 dotnet test
-#   Determining projects to restore...
-#   All projects are up-to-date for restore.
-#   HelloWorld -> /workspaces/exercism_dotnet/csharp/hello-world/bin/Debug/net6.0/HelloWorld.dll
-# Test run for /workspaces/exercism_dotnet/csharp/hello-world/bin/Debug/net6.0/HelloWorld.dll (.NETCoreApp,Version=v6.0)
-# Microsoft (R) Test Execution Command Line Tool Version 17.0.0
-# Copyright (c) Microsoft Corporation.  All rights reserved.
-
 # Starting test execution, please wait...
 # A total of 1 test files matched the specified pattern.
 
@@ -83,7 +76,7 @@ Add the following line in:
 | Bird Watcher                      | `Completed`   | Learn about arrays by keeping track of how many birds visit your garden.                                                                                                                                                                                                                                              |
 | Lucian's Luscious Lasagna         | `Completed`   | Learn about the basics of C# by following a lasagna recipe.                                                                                                                                                                                                                                                           |
 | Annalyn's Infiltration            | `Completed`   | Learn about booleans while helping Annalyn rescue her friend.                                                                                                                                                                                                                                                         |
-| Secure Munchester United          | `Not started` | Learn about casting by creating security passes.                                                                                                                                                                                                                                                                      |
+| Secure Munchester United          | `Completed`   | Learn about casting by creating security passes.                                                                                                                                                                                                                                                                      |
 | Squeaky Clean                     | `Completed`   | Learn about characters and StringBuilder by cleaning strings.                                                                                                                                                                                                                                                         |
 | Elon's Toys                       | `Completed`   | Learn about classes by working on a remote controlled car.                                                                                                                                                                                                                                                            |
 | Authentication System             | `Not started` | Learn about the const and readonly keywords by refactoring an authentication system.                                                                                                                                                                                                                                  |
