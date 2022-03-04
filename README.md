@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="high-school-sweethearts" # <---------- Replace here
+exercise="instruments-of-texas" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -113,7 +113,7 @@ Add the following line in:
 | Football Match Reports            | `Completed`   | Learn about switches by developing a system to report on soccer matches.                                                                                                                                                                                                                                              |
 | Beauty Salon Goes Global          | `Completed`   | Learn about the DateTime class by helping a salon deal with timezones.                                                                                                                                                                                                                                                |
 | Phone Number Analysis             | `Completed`   | Learn about tuples by analysing phone numbers.                                                                                                                                                                                                                                                                        |
-| Instruments of Texas              | `Not started` | Learn about exceptions by handling adding multiplication to a calculator.                                                                                                                                                                                                                                             |
+| Instruments of Texas              | `Completed`   | Learn about exceptions by handling adding multiplication to a calculator.                                                                                                                                                                                                                                             |
 | Log Analysis                      | `Completed`   | Learn about extension-methods by analysing logs.                                                                                                                                                                                                                                                                      |
 | Two Fer                           | `Not started` | Create a sentence of the form "One for X, one for me.".                                                                                                                                                                                                                                                               |
 | Leap                              | `Not started` | Given a year, report if it is a leap year.                                                                                                                                                                                                                                                                            |
