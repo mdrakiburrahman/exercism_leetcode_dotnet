@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="weighing-machine" # <---------- Replace here
+exercise="the-weather-in-deather" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -40,9 +40,7 @@ dotnet test
 exercism submit HelloWorld.cs
 # Your solution has been submitted successfully.
 #     View it at:
-
-
-#     https://exercism.org/tracks/csharp/exercises/hello-world
+#     https://exewrcism.org/tracks/csharp/exercises/hello-world
 ```
 
 ## To test locally in `csproj`
