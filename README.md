@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="parsing-log-files" # <---------- Replace here
+exercise="orm-in-one-go" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -106,7 +106,7 @@ Add the following line in:
 | Roll the Die!                     | `Completed`   | Learn about randomness by generating numbers in a game.                                                                                                                                                                                                                                                               |
 | Parsing Log Files                 | `Completed`   | Learn about regular expressions by parsing logs.                                                                                                                                                                                                                                                                      |
 | Object Relational Mapping         | `Completed`   | Learn about the IDisposable interface by implementing an ORM system.                                                                                                                                                                                                                                                  |
-| Orm in One Go                     | `Not started` | Learn about the using block by implementing an ORM system.                                                                                                                                                                                                                                                            |
+| Orm in One Go                     | `Completed`   | Learn about the using block by implementing an ORM system.                                                                                                                                                                                                                                                            |
 | High School Sweethearts           | `Completed`   | Learn about string formatting by helping high school sweethearts profess their love on social media.                                                                                                                                                                                                                  |
 | Log Levels                        | `Completed`   | Learn about strings by processing logs.                                                                                                                                                                                                                                                                               |
 | Land Grab in Space                | `Not started` | Learn about structs by improving the performance of a land claim system.                                                                                                                                                                                                                                              |
