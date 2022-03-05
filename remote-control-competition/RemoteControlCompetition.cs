@@ -1,25 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-// // 1.
-// var prod = new ProductionRemoteControlCar();
-// var exp = new ExperimentalRemoteControlCar();
-// TestTrack.Race(prod);
-// TestTrack.Race(exp);
-
-// // 2.
-// Console.WriteLine(prod.DistanceTravelled);
-// Console.WriteLine(exp.DistanceTravelled);
-
-// // 3.
-// var prc1 = new ProductionRemoteControlCar();
-// var prc2 = new ProductionRemoteControlCar();
-// prc1.NumberOfVictories = 3;
-// prc2.NumberOfVictories = 2;
-// var rankings = TestTrack.GetRankedCars(prc1, prc2);
-// Console.WriteLine(rankings[1] == prc1);
-// Console.WriteLine(rankings[1] == prc2);
-
 public interface IRemoteControlCar
 {
     public int DistanceTravelled { get; set; }
@@ -35,10 +16,8 @@ public class ProductionRemoteControlCar : IRemoteControlCar, IComparable<Product
     {
         DistanceTravelled += 10;
     }
-    public int CompareTo(ProductionRemoteControlCar other)
-    {
-        return this.NumberOfVictories >= other.NumberOfVictories ? 1 : -1;
-    }
+    // Note that CompareTo does some voodoo magic with the NumberofVictories to make this work.
+    public int CompareTo(ProductionRemoteControlCar other) => this.NumberOfVictories.CompareTo(other.NumberOfVictories);
 }
 
 public class ExperimentalRemoteControlCar : IRemoteControlCar
