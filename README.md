@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="the-weather-in-deather" # <---------- Replace here
+exercise="remote-control-competition" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
