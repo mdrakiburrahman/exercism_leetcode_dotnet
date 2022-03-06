@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="developer-privileges" # <---------- Replace here
+exercise="building-telemetry" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -99,7 +99,7 @@ Add the following line in:
 | Developer Privileges              | `Completed`   | Learn about object initialisers by adding functionality to an authentication system.                                                                                                                                                                                                                                  |
 | Hyperia Forex                     | `Not started` | Learn about operator overloading by introducing a new currency to a bank.                                                                                                                                                                                                                                             |
 | Hyperinflation Hits Hyperia       | `Completed`   | Learn about arithmetic overflow by dealing with hyperinflation.                                                                                                                                                                                                                                                       |
-| Building Telemetry                | `Not started` | Learn about parameter modifiers by adding telemetry to a car.                                                                                                                                                                                                                                                         |
+| Building Telemetry                | `Completed`   | Learn about parameter modifiers by adding telemetry to a car.                                                                                                                                                                                                                                                         |
 | Weighing Machine                  | `Completed`   | Learn about properties by modelling a weighing machine.                                                                                                                                                                                                                                                               |
 | Roll the Die!                     | `Completed`   | Learn about randomness by generating numbers in a game.                                                                                                                                                                                                                                                               |
 | Parsing Log Files                 | `Completed`   | Learn about regular expressions by parsing logs.                                                                                                                                                                                                                                                                      |
