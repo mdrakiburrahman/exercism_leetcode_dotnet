@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="wizards-and-warriors-2" # <---------- Replace here
+exercise="developer-privileges" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -96,7 +96,7 @@ Add the following line in:
 | Remote Control Cleanup            | `Not started` | Learn about nested types by refactoring a car class.                                                                                                                                                                                                                                                                  |
 | Tim from Marketing                | `Completed`   | Learn about nullables by printing name badges.                                                                                                                                                                                                                                                                        |
 | Cars, Assemble!                   | `Completed`   | Learn about numbers by analyzing the production of an assembly line.                                                                                                                                                                                                                                                  |
-| Developer Privileges              | `Not started` | Learn about object initialisers by adding functionality to an authentication system.                                                                                                                                                                                                                                  |
+| Developer Privileges              | `Completed`   | Learn about object initialisers by adding functionality to an authentication system.                                                                                                                                                                                                                                  |
 | Hyperia Forex                     | `Not started` | Learn about operator overloading by introducing a new currency to a bank.                                                                                                                                                                                                                                             |
 | Hyperinflation Hits Hyperia       | `Completed`   | Learn about arithmetic overflow by dealing with hyperinflation.                                                                                                                                                                                                                                                       |
 | Building Telemetry                | `Not started` | Learn about parameter modifiers by adding telemetry to a car.                                                                                                                                                                                                                                                         |
