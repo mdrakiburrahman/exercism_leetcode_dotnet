@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="remote-control-competition" # <---------- Replace here
+exercise="wizards-and-warriors-2" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -91,7 +91,7 @@ Add the following line in:
 | Hyper-optimized Telemetry         | `Completed`   | Learn about bit conversion by implementing a message protocol.                                                                                                                                                                                                                                                        |
 | Remote Control Competition        | `Completed`   | Learn about interfaces by working on cars.                                                                                                                                                                                                                                                                            |
 | Tracks on Tracks on Tracks        | `Completed`   | Learn about lists by keeping track of programming languages you want to learn.                                                                                                                                                                                                                                        |
-| Wizards and Warriors 2.0          | `Not started` | Learn about classes by extending an RPG.                                                                                                                                                                                                                                                                              |
+| Wizards and Warriors 2.0          | `Completed`   | Learn about classes by extending an RPG.                                                                                                                                                                                                                                                                              |
 | Red vs. Blue: Darwin Style        | `Not started` | Learn about namespaces by managing car development teams.                                                                                                                                                                                                                                                             |
 | Remote Control Cleanup            | `Not started` | Learn about nested types by refactoring a car class.                                                                                                                                                                                                                                                                  |
 | Tim from Marketing                | `Completed`   | Learn about nullables by printing name badges.                                                                                                                                                                                                                                                                        |
