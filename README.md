@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="faceid-2" # <---------- Replace here
+exercise="land-grab-in-space" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -107,7 +107,7 @@ Add the following line in:
 | Orm in One Go                     | `Completed`   | Learn about the using block by implementing an ORM system.                                                                                                                                                                                                                                                            |
 | High School Sweethearts           | `Completed`   | Learn about string formatting by helping high school sweethearts profess their love on social media.                                                                                                                                                                                                                  |
 | Log Levels                        | `Completed`   | Learn about strings by processing logs.                                                                                                                                                                                                                                                                               |
-| Land Grab in Space                | `Not started` | Learn about structs by improving the performance of a land claim system.                                                                                                                                                                                                                                              |
+| Land Grab in Space                | `Completed`   | Learn about structs by improving the performance of a land claim system.                                                                                                                                                                                                                                              |
 | Football Match Reports            | `Completed`   | Learn about switches by developing a system to report on soccer matches.                                                                                                                                                                                                                                              |
 | Beauty Salon Goes Global          | `Completed`   | Learn about the DateTime class by helping a salon deal with timezones.                                                                                                                                                                                                                                                |
 | Phone Number Analysis             | `Completed`   | Learn about tuples by analysing phone numbers.                                                                                                                                                                                                                                                                        |
