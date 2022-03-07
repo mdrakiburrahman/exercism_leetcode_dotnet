@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="land-grab-in-space" # <---------- Replace here
+exercise="hyperia-forex" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -97,7 +97,7 @@ Add the following line in:
 | Tim from Marketing                | `Completed`   | Learn about nullables by printing name badges.                                                                                                                                                                                                                                                                        |
 | Cars, Assemble!                   | `Completed`   | Learn about numbers by analyzing the production of an assembly line.                                                                                                                                                                                                                                                  |
 | Developer Privileges              | `Completed`   | Learn about object initialisers by adding functionality to an authentication system.                                                                                                                                                                                                                                  |
-| Hyperia Forex                     | `Not started` | Learn about operator overloading by introducing a new currency to a bank.                                                                                                                                                                                                                                             |
+| Hyperia Forex                     | `Completed`   | Learn about operator overloading by introducing a new currency to a bank.                                                                                                                                                                                                                                             |
 | Hyperinflation Hits Hyperia       | `Completed`   | Learn about arithmetic overflow by dealing with hyperinflation.                                                                                                                                                                                                                                                       |
 | Building Telemetry                | `Completed`   | Learn about parameter modifiers by adding telemetry to a car.                                                                                                                                                                                                                                                         |
 | Weighing Machine                  | `Completed`   | Learn about properties by modelling a weighing machine.                                                                                                                                                                                                                                                               |
