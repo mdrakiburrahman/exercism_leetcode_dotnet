@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="building-telemetry" # <---------- Replace here
+exercise="faceid-2" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -82,7 +82,7 @@ Add the following line in:
 | Booking up for Beauty             | `Completed`   | Learn about the DateTime class by working on an appointment scheduler for a beauty salon.                                                                                                                                                                                                                             |
 | International Calling Connoisseur | `Completed`   | Learn about dictionaries by keeping track of international dialling codes.                                                                                                                                                                                                                                            |
 | Logs, Logs, Logs!                 | `Completed`   | Learn about enums by parsing logs.                                                                                                                                                                                                                                                                                    |
-| Face ID 2.0                       | `Not started` | Learn about equality by adding face recognition to a login process.                                                                                                                                                                                                                                                   |
+| Face ID 2.0                       | `Completed`   | Learn about equality by adding face recognition to a login process.                                                                                                                                                                                                                                                   |
 | Calculator Conundrum              | `Completed`   | Learn about error handling by working on a simple calculator.                                                                                                                                                                                                                                                         |
 | The Weather in Deather            | `Completed`   | Learn about expressions by improving legacy code.                                                                                                                                                                                                                                                                     |
 | Attack of the Trolls              | `Completed`   | Learn about flag enumerations by checking permissions of user accounts on an internet forum.                                                                                                                                                                                                                          |
