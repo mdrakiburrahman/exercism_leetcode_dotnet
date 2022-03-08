@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="hyperia-forex" # <---------- Replace here
+exercise="remote-control-cleanup" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -93,7 +93,7 @@ Add the following line in:
 | Tracks on Tracks on Tracks        | `Completed`   | Learn about lists by keeping track of programming languages you want to learn.                                                                                                                                                                                                                                        |
 | Wizards and Warriors 2.0          | `Completed`   | Learn about classes by extending an RPG.                                                                                                                                                                                                                                                                              |
 | Red vs. Blue: Darwin Style        | `Not started` | Learn about namespaces by managing car development teams.                                                                                                                                                                                                                                                             |
-| Remote Control Cleanup            | `Not started` | Learn about nested types by refactoring a car class.                                                                                                                                                                                                                                                                  |
+| Remote Control Cleanup            | `Completed`   | Learn about nested types by refactoring a car class.                                                                                                                                                                                                                                                                  |
 | Tim from Marketing                | `Completed`   | Learn about nullables by printing name badges.                                                                                                                                                                                                                                                                        |
 | Cars, Assemble!                   | `Completed`   | Learn about numbers by analyzing the production of an assembly line.                                                                                                                                                                                                                                                  |
 | Developer Privileges              | `Completed`   | Learn about object initialisers by adding functionality to an authentication system.                                                                                                                                                                                                                                  |
