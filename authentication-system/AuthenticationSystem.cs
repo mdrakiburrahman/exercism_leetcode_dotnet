@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 public class Authenticator
 {
@@ -10,22 +11,20 @@ public class Authenticator
         public const string Hazel = "hazel";
         public const string Brey = "grey";
     }
-
+    private Identity admin;
     public Authenticator(Identity admin)
     {
         this.admin = admin;
     }
 
-    private Identity admin;
     // This is called in the tests
     public Identity Admin
     {
         get { return admin; }
-        set { admin = value; }
     }
 
     private static IReadOnlyDictionary<string, Identity> developers
-        = new Dictionary<string, Identity>
+        = new ReadOnlyDictionary<string, Identity>(new Dictionary<string, Identity>
         {
             ["Bertrand"] = new Identity
             {
@@ -38,7 +37,7 @@ public class Authenticator
                 Email = "anders@ex.ism",
                 EyeColor = "brown"
             }
-        };
+        });
 
     public IReadOnlyDictionary<string, Identity> GetDevelopers()
     {
@@ -46,10 +45,10 @@ public class Authenticator
     }
 }
 
-public struct Identity
+public readonly struct Identity
 {
-    public string Email { get; set; }
+    public string Email { get; init; }
 
-    public string EyeColor { get; set; }
+    public string EyeColor { get; init; }
 
 }
