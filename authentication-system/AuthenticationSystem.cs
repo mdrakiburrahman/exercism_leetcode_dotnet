@@ -4,11 +4,11 @@ public class Authenticator
 {
     private class EyeColor
     {
-        public string Blue = "blue";
-        public string Green = "green";
-        public string Brown = "brown";
-        public string Hazel = "hazel";
-        public string Brey = "grey";
+        public const string Blue = "blue";
+        public const string Green = "green";
+        public const string Brown = "brown";
+        public const string Hazel = "hazel";
+        public const string Brey = "grey";
     }
 
     public Authenticator(Identity admin)
@@ -17,8 +17,14 @@ public class Authenticator
     }
 
     private Identity admin;
+    // This is called in the tests
+    public Identity Admin
+    {
+        get { return admin; }
+        set { admin = value; }
+    }
 
-    private IDictionary<string, Identity> developers
+    private static IReadOnlyDictionary<string, Identity> developers
         = new Dictionary<string, Identity>
         {
             ["Bertrand"] = new Identity
@@ -34,13 +40,7 @@ public class Authenticator
             }
         };
 
-    public Identity Admin
-    {
-        get { return admin; }
-        set { admin = value; }
-    }
-
-    public IDictionary<string, Identity> GetDevelopers()
+    public IReadOnlyDictionary<string, Identity> GetDevelopers()
     {
         return developers;
     }
@@ -51,4 +51,5 @@ public struct Identity
     public string Email { get; set; }
 
     public string EyeColor { get; set; }
+
 }
