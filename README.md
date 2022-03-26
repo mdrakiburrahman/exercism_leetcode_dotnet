@@ -43,6 +43,17 @@ exercism submit HelloWorld.cs
 #     https://exewrcism.org/tracks/csharp/exercises/hello-world
 ```
 
+Starting a new dotnet project:
+
+```bash
+cd /workspaces/exercism_dotnet
+mkdir simpler-linked-list
+cd simpler-linked-list
+dotnet new console --framework net6.0
+# obj  Program.cs  simpler-linked-list.csproj
+
+```
+
 ## To test locally in `csproj`
 
 Add the following line in:
