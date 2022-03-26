@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="red-vs-blue-darwin-style" # <---------- Replace here
+exercise="rectangles" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -182,7 +182,7 @@ Add the following line in:
 | Scale Generator                   | `Not started` | Generate musical scales, given a starting note and a set of intervals.                                                                                                                                                                                                                                                |
 | Tree Building                     | `Not started` | Refactor a tree building algorithm.                                                                                                                                                                                                                                                                                   |
 | Change                            | `Not started` | Correctly determine change to be given using the least number of coins.                                                                                                                                                                                                                                               |
-| Rectangles                        | `Not started` | Count the rectangles in an ASCII diagram.                                                                                                                                                                                                                                                                             |
+| Rectangles                        | `In Progress` | Count the rectangles in an ASCII diagram.                                                                                                                                                                                                                                                                             |
 | Wordy                             | `Not started` | Parse and evaluate simple math word problems returning the answer as an integer.                                                                                                                                                                                                                                      |
 | Connect                           | `Not started` | Compute the result for a game of Hex / Polygon.                                                                                                                                                                                                                                                                       |
 | Sgf Parsing                       | `Not started` | Parsing a Smart Game Format string.                                                                                                                                                                                                                                                                                   |
