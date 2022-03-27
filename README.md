@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="grade-school" # <---------- Replace here
+exercise="acronym" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -147,7 +147,7 @@ Add the following line in:
 | Forth                             | `Not started` | Implement an evaluator for a very simple subset of Forth.                                                                                                                                                                                                                                                             |
 | Pangram                           | `Completed`   | Determine if a sentence is a pangram.                                                                                                                                                                                                                                                                                 |
 | Isogram                           | `Completed`   | Determine if a word or phrase is an isogram.                                                                                                                                                                                                                                                                          |
-| Acronym                           | `Not started` | Convert a long phrase to its acronym.                                                                                                                                                                                                                                                                                 |
+| Acronym                           | `Completed`   | Convert a long phrase to its acronym.                                                                                                                                                                                                                                                                                 |
 | Grains                            | `Not started` | Calculate the number of grains of wheat on a chessboard given that the number on each square doubles.                                                                                                                                                                                                                 |
 | Perfect Numbers                   | `Not started` | Determine if a number is perfect, abundant, or deficient based on Nicomachus' (60 - 120 CE) classification scheme for positive integers.                                                                                                                                                                              |
 | Collatz Conjecture                | `Not started` | Calculate the number of steps to reach 1 using the Collatz conjecture.                                                                                                                                                                                                                                                |
