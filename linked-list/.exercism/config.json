@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "bressain"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "jwood803",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "LinkedList.cs"
+    ],
+    "test": [
+      "LinkedListTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "blurb": "Implement a doubly linked list.",
+  "source": "Classic computer science topic"
+}
