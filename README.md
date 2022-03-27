@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="acronym" # <---------- Replace here
+exercise="nth-prime" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -236,7 +236,7 @@ Add the following line in:
 | Say                               | `Not started` | Given a number from 0 to 999,999,999,999, spell out that number in English.                                                                                                                                                                                                                                           |
 | Book Store                        | `Not started` | To try and encourage more sales of different books from a popular 5 book series, a bookshop has decided to offer discounts of multiple-book purchases.                                                                                                                                                                |
 | Custom Set                        | `Not started` | Create a custom set type.                                                                                                                                                                                                                                                                                             |
-| Nth Prime                         | `Not started` | Given a number n, determine what the nth prime is.                                                                                                                                                                                                                                                                    |
+| Nth Prime                         | `Completed`   | Given a number n, determine what the nth prime is.                                                                                                                                                                                                                                                                    |
 | Rail Fence Cipher                 | `Not started` | Implement encoding and decoding for the rail fence cipher.                                                                                                                                                                                                                                                            |
 | Diffie Hellman                    | `Not started` | Diffie-Hellman key exchange.                                                                                                                                                                                                                                                                                          |
 | Zebra Puzzle                      | `Not started` | Solve the zebra puzzle.                                                                                                                                                                                                                                                                                               |
