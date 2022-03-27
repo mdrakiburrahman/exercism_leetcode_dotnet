@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "bressain"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "jwood803",
+    "kytrinyx",
+    "NextNebula",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Leap.cs"
+    ],
+    "test": [
+      "LeapTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "blurb": "Given a year, report if it is a leap year.",
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}
