@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="nth-prime" # <---------- Replace here
+exercise="bob" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -138,7 +138,7 @@ Add the following line in:
 | Rotational Cipher                 | `Not started` | Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.                                                                                                                                                                                                                           |
 | Circular Buffer                   | `Not started` | A data structure that uses a single, fixed-size buffer as if it were connected end-to-end.                                                                                                                                                                                                                            |
 | Clock                             | `Not started` | Implement a clock that handles times without dates.                                                                                                                                                                                                                                                                   |
-| Bob                               | `Not started` | Bob is a lackadaisical teenager. In conversation, his responses are very limited.                                                                                                                                                                                                                                     |
+| Bob                               | `Completed`   | Bob is a lackadaisical teenager. In conversation, his responses are very limited.                                                                                                                                                                                                                                     |
 | Matching Brackets                 | `Not started` | Make sure the brackets and braces all match.                                                                                                                                                                                                                                                                          |
 | Spiral Matrix                     | `Not started` | Given the size, return a square matrix of numbers in spiral order.                                                                                                                                                                                                                                                    |
 | Tournament                        | `Not started` | Tally the results of a small football competition.                                                                                                                                                                                                                                                                    |
