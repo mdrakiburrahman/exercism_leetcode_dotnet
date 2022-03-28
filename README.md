@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="rna-transcription" # <---------- Replace here
+exercise="word-count" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -218,7 +218,7 @@ Add the following line in:
 | Affine Cipher                     | `Not started` | Create an implementation of the Affine cipher, an ancient encryption algorithm from the Middle East.                                                                                                                                                                                                                  |
 | Isbn Verifier                     | `Not started` | Check if a given string is a valid ISBN-10 number.                                                                                                                                                                                                                                                                    |
 | Twelve Days                       | `Not started` | Output the lyrics to 'The Twelve Days of Christmas'.                                                                                                                                                                                                                                                                  |
-| Word Count                        | `Not started` | Given a phrase, count the occurrences of each word in that phrase.                                                                                                                                                                                                                                                    |
+| Word Count                        | `Completed`   | Given a phrase, count the occurrences of each word in that phrase.                                                                                                                                                                                                                                                    |
 | Yacht                             | `Not started` | Score a single throw of dice in the game Yacht.                                                                                                                                                                                                                                                                       |
 | Dot Dsl                           | `Not started` | Write a Domain Specific Language similar to the Graphviz dot language.                                                                                                                                                                                                                                                |
 | Linked List                       | `Completed`   | Implement a doubly linked list.                                                                                                                                                                                                                                                                                       |
