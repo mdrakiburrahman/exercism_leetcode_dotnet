@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="word-count" # <---------- Replace here
+exercise="grains" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -148,7 +148,7 @@ Add the following line in:
 | Pangram                           | `Completed`   | Determine if a sentence is a pangram.                                                                                                                                                                                                                                                                                 |
 | Isogram                           | `Completed`   | Determine if a word or phrase is an isogram.                                                                                                                                                                                                                                                                          |
 | Acronym                           | `Completed`   | Convert a long phrase to its acronym.                                                                                                                                                                                                                                                                                 |
-| Grains                            | `Not started` | Calculate the number of grains of wheat on a chessboard given that the number on each square doubles.                                                                                                                                                                                                                 |
+| Grains                            | `Completed`   | Calculate the number of grains of wheat on a chessboard given that the number on each square doubles.                                                                                                                                                                                                                 |
 | Perfect Numbers                   | `Not started` | Determine if a number is perfect, abundant, or deficient based on Nicomachus' (60 - 120 CE) classification scheme for positive integers.                                                                                                                                                                              |
 | Collatz Conjecture                | `Not started` | Calculate the number of steps to reach 1 using the Collatz conjecture.                                                                                                                                                                                                                                                |
 | Phone Number                      | `Not started` | Clean up user-entered phone numbers so that they can be sent SMS messages.                                                                                                                                                                                                                                            |
