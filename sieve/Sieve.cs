@@ -31,36 +31,38 @@ public static class Sieve
     {
         int n = 1; // Multiplier
         bool flag = true;
-        while(flag && (i + l[i]*n) < limit)
+        while(flag) // When flag is false, we are out of bound
         {
-            l[i + l[i]*n] = 0; // Prime multiples
-
-            n++;
-
-            if (i + l[i]*n >= l.Length - 1) // outside array
+            if ((i + l[i]*n) >= l.Length) // Out of bound
             {
                 flag = false;
+                break;
+            } else {
+                l[i + l[i]*n] = 0; // Weed out Prime multiples
+                n++;
             }
         }
         i = nextNonZeroIndex(l, i); // Find next non-zero index for new prime
-
         if(i == l.Length - 1) // End of array
         {
-            return l;
+            return l; // returns with zeros
         } else {
             return sieve(l, i, limit);
         }
     }
     public static int[] Primes(int limit)
     {
-        if (limit <= 0)
+        if (limit <= 0) // Negative
         {
             throw new ArgumentOutOfRangeException("limit", "Limit must be greater than 0");
+        } else if (limit  == 1) // 1 is not prime
+        {
+            return new int[0];
         }
         var l = generateNums(limit);
         l = sieve(l, 0, limit);
 
-        // Remove all zeros
+        // Remove all zeros and create new array
         var primes = new List<int>() {};
         for (int i = 0; i < l.Length; i++)
         {
@@ -68,10 +70,7 @@ public static class Sieve
             {
                 primes.Add(l[i]);
             }
-        }
-
-        Console.WriteLine($"Output: {String.Join(", ", primes)}");
-        
+        }        
         return primes.ToArray();
     }
 }
