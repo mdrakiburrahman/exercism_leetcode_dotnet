@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="series" # <---------- Replace here
+exercise="sieve" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
