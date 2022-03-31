@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="sieve" # <---------- Replace here
+exercise="matching-brackets" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -51,8 +51,18 @@ mkdir simpler-linked-list
 cd simpler-linked-list
 dotnet new console --framework net6.0
 # obj  Program.cs  simpler-linked-list.csproj
-
 ```
+
+Debugging in VSCode:
+
+There are 2 files we need to update:
+* `/workspaces/exercism_dotnet/.vscode/launch.json`
+* `/workspaces/exercism_dotnet/.vscode/tasks.json`
+
+To do:
+* Update with the local path of the  particular exercise.
+* Add breakpoint
+* Run > Start Debugging
 
 ## To test locally in `csproj`
 
