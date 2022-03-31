@@ -60,10 +60,11 @@ There are 2 files we need to update:
 * `/workspaces/exercism_dotnet/.vscode/tasks.json`
 
 To do:
-* Update with the local path of the  particular exercise.
+* Update with the local path of the particular exercise.
 * Add breakpoint
+* Add the `GenerateProgramFile` into csproj
 * Add some invoker code at the top level to call your function
-* Run > Start Debugging
+* Run > Start Debugging or `F5`
 
 ## To test locally in `csproj`
 

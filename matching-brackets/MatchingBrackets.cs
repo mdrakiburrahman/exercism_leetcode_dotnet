@@ -1,25 +1,58 @@
 using System;
 using System.Collections.Generic;
 
-var value = "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)";
-Console.WriteLine(MatchingBrackets.IsPaired(value));
-
 public static class MatchingBrackets
 {
-    public static bool IsPaired(string input)
+    public static bool BracketSequenceCorrect(string input)
     {
-        var flag = false;
-        string cleaned = "";
-        var match = new List<char>() {'[', ']', '(', ')', '{', '}'};
-
-        foreach(char c in input)
+        var stack = new Stack<char>();
+        var open = new List<char> {'(', '[', '{'};
+        var close = new List<char> {')', ']', '}'};
+        
+        // Iterate through and add valid characters to stack
+        foreach (char c in input)
         {
-            if (match.Contains(c))
+            if (open.Contains(c)) // Open Bracket
             {
-                cleaned += c;
+                stack.Push(c);
+            } else if (close.Contains(c)) // Close Bracket
+            {
+                // Hit closing bracket with empty stack
+                if (stack.Count == 0)
+                {
+                    return false;
+                }
+                switch (c)
+                {
+                    case ')':
+                        if (stack.Peek() != '(')
+                        {
+                            return false;
+                        }
+                        stack.Pop();
+                        break;
+                    case ']':
+                        if (stack.Peek() != '[')
+                        {
+                            return false;
+                        }
+                        stack.Pop();
+                        break;
+                    case '}':
+                        if (stack.Peek() != '{')
+                        {
+                            return false;
+                        }
+                        stack.Pop();
+                        break;
+                }       
             }
         }
-        Console.WriteLine(cleaned);
-        return flag;
+        return stack.Count == 0; 
+    }
+
+    public static bool IsPaired(string input)
+    {
+        return BracketSequenceCorrect(input);
     }
 }
