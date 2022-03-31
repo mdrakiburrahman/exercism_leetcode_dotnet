@@ -62,6 +62,7 @@ There are 2 files we need to update:
 To do:
 * Update with the local path of the  particular exercise.
 * Add breakpoint
+* Add some invoker code at the top level to call your function
 * Run > Start Debugging
 
 ## To test locally in `csproj`
