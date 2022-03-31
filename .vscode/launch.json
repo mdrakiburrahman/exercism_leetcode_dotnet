@@ -9,10 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            // Edit this
-            "program": "/workspaces/exercism_dotnet/matching-brackets/bin/Debug/net6.0/MatchingBrackets.dll",
+            "program": "/workspaces/exercism_dotnet/clock/bin/Debug/net6.0/Clock.dll", // <-- Edit this
             "args": [],
-            "cwd": "/workspaces/exercism_dotnet/matching-brackets",
+            "cwd": "/workspaces/exercism_dotnet/clock", // <-- Edit this
             "console": "internalConsole",
             "stopAtEntry": false
         },

@@ -20,7 +20,7 @@ deactivate # Deactivate venv
 
 ```bash
 # Download a new exercise
-exercise="matching-brackets" # <---------- Replace here
+exercise="clock" # <---------- Replace here
 cd "/workspaces/exercism_dotnet"
 exercism download --exercise=$exercise --track=csharp
 # Move to root
@@ -60,6 +60,7 @@ There are 2 files we need to update:
 * `/workspaces/exercism_dotnet/.vscode/tasks.json`
 
 To do:
+* `dotnet build` to generate interim dll path
 * Update with the local path of the particular exercise.
 * Add breakpoint
 * Add the `GenerateProgramFile` into csproj

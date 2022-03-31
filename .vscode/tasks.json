@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "/workspaces/exercism_dotnet/matching-brackets/MatchingBrackets.csproj", // Edit this
+                "/workspaces/exercism_dotnet/clock/Clock.csproj", // <-- Edit this
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "/workspaces/exercism_dotnet/matching-brackets/MatchingBrackets.csproj", // Edit this
+                "/workspaces/exercism_dotnet/clock/Clock.csproj", // <-- Edit this
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "/workspaces/exercism_dotnet/matching-brackets/MatchingBrackets.csproj" // Edit this
+                "/workspaces/exercism_dotnet/clock/Clock.csproj" // <-- Edit this
             ],
             "problemMatcher": "$msCompile"
         }
