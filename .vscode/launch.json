@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "/workspaces/exercism_dotnet/clock/bin/Debug/net6.0/Clock.dll", // <-- Edit this
+            "program": "/workspaces/exercism_dotnet/prime-factors/bin/Debug/net6.0/PrimeFactors.dll", // <-- Edit this
             "args": [],
-            "cwd": "/workspaces/exercism_dotnet/clock", // <-- Edit this
+            "cwd": "/workspaces/exercism_dotnet/prime-factors", // <-- Edit this
             "console": "internalConsole",
             "stopAtEntry": false
         },
