@@ -1,7 +1,5 @@
 using System;
 
-Console.WriteLine(Triangle.IsEquilateral(2, 2, 2));
-
 public static class Triangle
 {
     public enum Kind
