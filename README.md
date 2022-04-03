@@ -88,6 +88,13 @@ Add the following line in:
 
 </Project>
 
+## Dotnet script - `.csx` file
+From here: https://github.com/filipw/dotnet-script
+
+```bash
+# Install
+dotnet tool install dotnet-script --tool-path /usr/bin
+dotnet script maximum-product-subarray.csx
 ```
 
 ## Progress
