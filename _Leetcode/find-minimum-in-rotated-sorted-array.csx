@@ -11,8 +11,6 @@ public class Solution {
     
     public int FindPivot(int[] arr, int L, int H)
     {
-        if(H < L) // Error-handling
-            return -1;
         if (H == L) // At pivot
             return L;
         
