@@ -43,7 +43,7 @@ public class Solution {
         //       |        |
         //       L        M
         if (arr[M] > arr[L])
-            return FindPivot(arr, M+1, H); // Pivot on the left somewhere
+            return FindPivot(arr, M+1, H); // Pivot on the right somewhere
         
         // e.g. [9, ..., 0, ... , 6, ...]
         //       ^                ^
