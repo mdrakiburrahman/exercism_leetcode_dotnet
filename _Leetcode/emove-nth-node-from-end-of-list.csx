@@ -9,6 +9,11 @@
  *     }
  * }
  */
+
+/*
+Time = O(2n) = O(n) - because we have to backtrack from the end
+Space = O(1) - because we are not using any extra space
+*/
 public class Solution {
     public ListNode RemoveNthFromEnd(ListNode head, int n) {        
         // Handle edges
