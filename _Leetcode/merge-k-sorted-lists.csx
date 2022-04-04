@@ -9,6 +9,12 @@
  *     }
  * }
  */
+
+// Time: O(kN)
+// k = number of lists
+// N = final number of nodes
+// Space: O(1)
+
 public class Solution {
     public ListNode MergeKLists(ListNode[] lists) {
         ListNode head = new ListNode();

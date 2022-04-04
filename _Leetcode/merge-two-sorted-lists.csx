@@ -97,14 +97,14 @@
 //         return new Tuple<ListNode, ListNode>(nextNode, c_n);
 //     }
     
-//     public void Printer(ListNode Node)
-//     {
-//         while (Node != null)
-//         {
-//             Console.WriteLine($"val: {Node.val}, next: {Node.next}");
-//             Node = Node.next;
-//         }
-//     }
+    // public void Printer(ListNode Node)
+    // {
+    //     while (Node != null)
+    //     {
+    //         Console.WriteLine($"val: {Node.val}, next: {Node.next}");
+    //         Node = Node.next;
+    //     }
+    // }
 // }
 
 // Leetcode solution
