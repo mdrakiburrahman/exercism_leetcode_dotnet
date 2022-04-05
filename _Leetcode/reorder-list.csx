@@ -9,6 +9,10 @@
  *     }
  * }
  */
+
+// Time = O(n)
+// Space = O(n)
+
 public class Solution {
     public void ReorderList(ListNode head) {
         if (head == null || head.next == null)
