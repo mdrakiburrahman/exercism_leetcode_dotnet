@@ -13,7 +13,7 @@
  */
 // Recursive
 // Time: O(n)
-// Space: O(n)
+// Space: O(n) - but in general height of tree
 public class Solution {
     
     List<int> l = new List<int>();
