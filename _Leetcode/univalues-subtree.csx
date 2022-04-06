@@ -11,54 +11,51 @@
  *     }
  * }
  */
+
+// Time: O(n)
+// Space: O(1)
+
 public class Solution {
-    int count = 0;
+    public int count = 0;
     public int CountUnivalSubtrees(TreeNode root) {
-        if (root == null)
-            return 0;
-        
-        if (root.left == null && root.right == null)
-            return 1; // Single node, is leaf
-        
-        bool left = helper(root.left, root.val);
-        bool right = helper(root.right, root.val);
-        
-        if (left && right && root.left.val == root.val && root.right.val == root.val)
-        {
-            count++;
-        }
-        
+        helper(root);
         return count;
     }
-    public bool helper(TreeNode root, int val)
+    
+    public Tuple<bool, int> helper(TreeNode root)
     {
-        if(root == null)
-            return false;
+        // Null cannot be U.S.
+        if (root == null)
+        {
+            return Tuple.Create(true, int.MinValue); // We report true to parent but down count the null
+        }
         
-        if (root.right == null && root.left == null) // leaf
+        // Leaf is always U.S.
+        if (root.right == null && root.left == null)
         {
             count++;
-            return true;
+            return Tuple.Create(true, root.val);
         }
-
-        Console.WriteLine($"{root.val} == {val}");
         
-        bool left = true;
-        if (root.left != null)
-            left = helper(root.left, val);
+        // Check left and right
+        var left = helper(root.left);
+        var right = helper(root.right);
         
-        bool right = true;
-        if (root.right != null)
-            right = helper(root.right, val);
+        Console.WriteLine($"root: {root.val}");
+        Console.WriteLine($"left: <{left.Item1}, {left.Item2}>");
+        Console.WriteLine($"right: <{right.Item1}, {right.Item2}>");
         
-        if (left && right && root.val == val)
+        // If left and right, and the value matches, we have a U.S. at the root
+        if(left.Item1 && right.Item1) // If both children report not false
         {
-            count++;
-            return true;
+            // If reported values match or are int.MinValue (only one child to root)
+            if ((left.Item2 == root.val || left.Item2 == int.MinValue) && (right.Item2 == root.val || right.Item2 == int.MinValue))
+            {
+                count++;
+                return Tuple.Create(true, root.val);   
+            }
         }
-        return false;
+            
+        return Tuple.Create(false, int.MinValue);
     }
 }
-
-
-// Bookmark April 8th night: https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/538/
