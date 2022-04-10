@@ -13,6 +13,10 @@ public class Node {
 }
 */
 
+
+// Recursive
+// Time Complexity: O(n)
+// Space Complexity: O(n) - for our dictionary
 public class Solution {
     
     Dictionary<Node, Node> visited = new Dictionary<Node, Node>();
