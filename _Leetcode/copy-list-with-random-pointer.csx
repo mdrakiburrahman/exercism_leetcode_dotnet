@@ -13,7 +13,6 @@ public class Node {
 }
 */
 
-
 // Recursive
 // Time Complexity: O(n)
 // Space Complexity: O(n) - for our dictionary
@@ -38,5 +37,50 @@ public class Solution {
         newRoot.random = CopyRandomList(root.random);
         
         return newRoot;
+    }
+}
+
+// Iterative
+// Time Complexity: O(n) - our while loop
+// Space Complexity: O(n) - for our dictionary
+
+public class Solution {
+    
+    Dictionary<Node, Node> visited = new Dictionary<Node, Node>();
+    
+    public Node CopyRandomList(Node root) {
+        if (root == null)
+            return null;
+        
+        var oldNode = root;                    // Iter node - original
+        var newNode = new Node(oldNode.val);   // Iter node - new
+        visited.Add(oldNode, newNode);
+        
+        while (oldNode != null)
+        {
+            newNode.next = getCached(oldNode.next);
+            newNode.random = getCached(oldNode.random);
+            
+            oldNode = oldNode.next;
+            newNode = newNode.next;
+        }
+        
+        return visited[root]; // Return the new root
+    }
+    
+    public Node getCached(Node node)
+    {
+        if (node == null)
+            return null;
+        
+        if (visited.ContainsKey(node))
+        {
+            return visited[node];
+        } else {
+            var newNode = new Node(node.val);
+            visited.Add(node, newNode);
+            return newNode;
+        }
+        return null;
     }
 }
