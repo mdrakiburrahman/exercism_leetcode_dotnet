@@ -1,4 +1,4 @@
-# My Dotnet Exercism solutions 👨‍💻
+# My Dotnet Exercism + LeetCode solutions 👨‍💻
 
 My solutions for Dotnet track at [Exercism](https://exercism.org/profiles/mdrakiburrahman).
 
