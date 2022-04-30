@@ -53,17 +53,18 @@ dotnet new console --framework net6.0
 # obj  Program.cs  simpler-linked-list.csproj
 ```
 
-Debugging in VSCode:
+Debugging in VSCode - Folder `.sandbox`:
 
 There are 2 files we need to update:
 * `/workspaces/exercism_dotnet/.vscode/launch.json`
 * `/workspaces/exercism_dotnet/.vscode/tasks.json`
 
 To do:
+* `cd /workspaces/exercism_dotnet/.sandbox`
 * `dotnet build` to generate interim dll path
 * Update with the local path of the particular exercise.
 * Add breakpoint
-* Add the `GenerateProgramFile` into csproj
+* Add the `<GenerateProgramFile>false</GenerateProgramFile>` into csproj
 * Add some invoker code at the top level to call your function
 * Run > Start Debugging or `F5`
 

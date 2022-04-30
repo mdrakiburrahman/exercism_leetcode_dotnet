@@ -1,58 +1,55 @@
+using System;
+using System.Linq;
+
+char[] s1 = { 't','h','e',' ','s','k','y',' ','i','s',' ','b','l','u','e' };
+Solution sol = new Solution();
+sol.ReverseWords(s1);
+Console.WriteLine(string.Join("", s1));
+
+char[] s2 = { 'a' };
+sol.ReverseWords(s2);
+Console.WriteLine(string.Join("", s2));
+
+char[] s3 = { 'a',' ','b',' ','c',' ','d',' ','e' };
+sol.ReverseWords(s3);
+Console.WriteLine(string.Join("", s3));
+
+char[] s4 = { 'h','i'};
+sol.ReverseWords(s4);
+Console.WriteLine(string.Join("", s4));
+
 public class Solution {
     public void ReverseWords(char[] s) {
-        int left_ptr = 0, right_ptr = (s.Length - 1);
-        string buffer = ""; // 0. Start buffer as empty
-        
-        
-        while (left_ptr < right_ptr) // Loop until left_ptr >= right_ptr
-        {
-            // 1. Start from the right, find the first word - including the space, set right_ptr
-            (int, string) tuple = GetRightWord(s, right_ptr);
-            
-            right_ptr = tuple.Item1;
-            string new_word = tuple.Item2;
-            
-            // 2. For the number of digits we found in new_word, copy to a "buffer" from front
-            // 3. Copy the new_word to front, set left_ptr
-            tuple = CopyRightWord(s, new_word, left_ptr);
-            left_ptr = tuple.Item1;
-            buffer += tuple.Item2;
-            
-            
-        }
+        ReversePartOfArray(s, 0, s.Length - 1);
+        ReverseEachValidWord(s);
+    }
 
-        // From left_ptr -> Split buffer by space -> Copy per word into s -> return
-        
-    }
-    
-    public (int, string) CopyRightWord(char[] s, string new_word, int left_ptr)
+    public void ReversePartOfArray(char[] s, int start, int end)
     {
-        string buffer = "";
-        
-        for (int i=left_ptr; i<new_word.Length; i++)
+        while (start < end)
         {
-            if (i == new_word.Length-1)
+            char temp = s[start];
+            s[start] = s[end];
+            s[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public void ReverseEachValidWord(char[] s)
+    {
+        int start = 0, end = 0;
+
+        while (start < s.Length)
+        {
+            while (end < s.Length && s[end] != ' ')
             {
-                s[i] = ' ';                
-            }    
-            else {
-                s[i] = new_word[i-left_ptr];   
+                end++; // Get to end of next valid word
             }
-            buffer += s[i];
+
+            ReversePartOfArray(s, start, end - 1);
+            start = end + 1;
+            end = start;
         }
-        return(left_ptr + new_word.Length, buffer);
-    }
-    
-    public (int, string) GetRightWord(char[] s, int right_ptr)
-    {
-        string word = "";
-        
-        while ((char)s[right_ptr] != ' ' && right_ptr != 0)
-        {
-            word += s[right_ptr];
-            right_ptr--;
-        }
-        
-        return(right_ptr, (word + " ").Reverse());
     }
 }
