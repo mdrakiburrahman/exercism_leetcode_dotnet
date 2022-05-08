@@ -2,60 +2,125 @@ using System;
 using System.Linq;
 
 Solution sol = new Solution();
-int result;
-// result = sol.MyAtoi("  -4193 with words");
-// result = sol.MyAtoi("words and 987");
-// result = sol.MyAtoi("    -42");
-// result = sol.MyAtoi("-2147483648");
-// result = sol.MyAtoi("+-12");
-// result = sol.MyAtoi("992147483646");
-result = sol.MyAtoi("21474836460");
-Console.WriteLine(result);
+string result;
+
+result = sol.LongestPalindrome("nxabaxzcbc");
+Console.WriteLine($"Longest: {result}");
+result = sol.LongestPalindrome("babad");
+Console.WriteLine($"Longest: {result}");
+result = sol.LongestPalindrome("cbbd");
+Console.WriteLine($"Longest: {result}");
+result = sol.LongestPalindrome("naabbaa");
+Console.WriteLine($"Longest: {result}");
 
 public class Solution {
-    public int MyAtoi(string s) {
-        bool isPositive = true; // Start assuming positive
-        bool inStreak = false;
-        long result = 0; // We will switch to integer after :)
-        for (int i=0; i<s.Length; i++) {
-            if (inStreak && (s[i] < '0' || s[i] > '9')) { // Check if streak is broken
-                break;
-            }
-            if (s[i] == '-') {
-                isPositive = false;
-                inStreak = true;
-                continue;
-            }
-            if (s[i] == '+') {
-                isPositive = true;
-                inStreak = true;
-                continue;
-            }
-            if (s[i] == ' ') {
-                continue;
-            }
-            if (!inStreak && (s[i] < '0' || s[i] > '9')) { // Not in streak yet and not a digit
-                break;
-            }
-            if (s[i] >= '0' && s[i] <= '9') { // If we find a digit, start streak
-                if (!inStreak) {
-                    inStreak = true;
-                }
+    public string LongestPalindrome(string s) {
+        string longestPalindrome = "";
+        string oddCandidate, evenCandidate;
 
-                result = result*10 + int.Parse(s[i].ToString());
-
-                if ( result > (long)(int.MaxValue) ) { // Check if we already overflowed past an int
-                    if (isPositive) {
-                        return int.MaxValue;
-                    } else {
-                        return int.MinValue;
-                    }
-                }
+        for (int i = 0; i < s.Length; i++) // Loop left to right
+        {
+            oddCandidate = GetLongestOddPalindrome(s, i);
+            evenCandidate = GetLongestEvenPalindrome(s, i);
+            if (oddCandidate.Length > longestPalindrome.Length)
+            {
+                longestPalindrome = oddCandidate;
+            }
+            if (evenCandidate.Length > longestPalindrome.Length)
+            {
+                longestPalindrome = evenCandidate;
             }
         }
-        if (!isPositive) {
-            result = -result;
+        return longestPalindrome;
+    }
+
+    public string GetLongestOddPalindrome(string s, int i)
+    {
+        string longest = s[i].ToString(); // The character itself is a palindrome
+        
+        if (i == 0 || i == s.Length-1) // At the edge of the string
+        {
+            return longest; // Return character itself
         }
-        return (int)result;
+
+        bool onStreak = true;
+        int distance = 1;
+        int left, right, length;
+
+        while (onStreak)
+        {
+            left = i-distance;
+            right = i+distance+1;
+            length = right-left;
+            if (left >= 0 && right <= s.Length)
+            {
+                // Console.WriteLine($"We're at: {s.Substring(left, length)}");
+                if (s[left] == s[right-1])
+                {
+                    // Console.WriteLine("Palindrome!");
+                    longest = s.Substring(left, length);
+                } else
+                {
+                    // Console.WriteLine("Not Palindrome!");
+                    onStreak = false;
+                }
+            } else {
+                onStreak = false;
+            }
+            distance++;
+        }
+
+        return longest;
+    } 
+    public string GetLongestEvenPalindrome(string s, int i)
+    {
+        string longest = ""; // Start with even palindrome
+        
+        if (i == 0 || i == s.Length-1) // At the edge of the string
+        {
+            return longest; // Return character itself
+        }
+        
+        bool onStreak = true;
+        int distance = 1;
+        int left, right, length;
+
+        while (onStreak)
+        {
+            left = i-distance;
+            right = i+distance;
+            length = right-left;
+            if (left >= 0 && right <= s.Length)
+            {
+                // Console.WriteLine($"We're at: {s.Substring(left, length)}");
+                if (s[left] == s[right-1])
+                {
+                    // Console.WriteLine("Palindrome!");
+                    longest = s.Substring(left, length);
+                } else
+                {
+                    // Console.WriteLine("Not Palindrome!");
+                    onStreak = false;
+                }                
+                
+            } else {
+                onStreak = false;
+            }
+            distance++;
+        }
+
+
+        return longest;
+    }
+
+    public string GetPalindrome(string s, int i, bool even)
+    {
+        string longest = "";
+        int offset = 0;
+        
+        if (even)
+        {
+            
+        }
     }
 }
