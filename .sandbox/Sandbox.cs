@@ -7,43 +7,44 @@ Solution sol = new Solution();
 
 var strs = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
 var result = sol.GroupAnagrams(strs);
-// Console.WriteLine($"Longest: {result}");
+Console.WriteLine($"Result: {result}");
+
+strs = new string[] { "" };
+result = sol.GroupAnagrams(strs);
+Console.WriteLine($"Result: {result}");
+
+strs = new string[] { "a" };
+result = sol.GroupAnagrams(strs);
+Console.WriteLine($"Result: {result}");
+
 
 public class Solution {
     public IList<IList<string>> GroupAnagrams(string[] strs) {
         var result = new List<IList<string>>();
-        
+        var sorted = new string[strs.Length];
         // Sort each string
         for (int i = 0; i < strs.Length; i++)
         {
-            strs[i] = string.Concat(strs[i].OrderBy(c => c));
+            sorted[i] = string.Concat(strs[i].OrderBy(c => c));
         }
-        // Sort the array
-        Array.Sort(strs);
-
-        // Group the array
-        List<string> group = new List<string>();
-        for (int i = 0; i < strs.Length; i++)
+        // Create a Dictionary, string -> List<string>
+        var dict = new Dictionary<string, List<string>>();    
+        // Populate Dictionary
+        for (int i = 0; i < sorted.Length; i++)
         {
-            if (i != 0 )
+            // Key is the sorted string, value is the original string added to the list
+            if (!dict.ContainsKey(sorted[i]))
             {
-                if (strs[i] != strs[i-1]) // String has changed, add new group
-                {
-                    result.Add(group);
-                    group = new List<string>();
-                    group.Add(strs[i]);
-                } else {
-                    group.Add(strs[i]);
-                }
-            } else { // First in list - add it in a new group
-                group = new List<string>();
-                group.Add(strs[i]);
+                dict.Add(sorted[i], new List<string>());
+                dict[sorted[i]].Add(strs[i]);
+            } else {
+                dict[sorted[i]].Add(strs[i]);
             }
         }
-        // If group is not empty, add it to the result
-        if (group.Count > 0)
+        // Populate result from dictionary
+        foreach (var key in dict.Keys)
         {
-            result.Add(group);
+            result.Add(dict[key]);
         }
         return result;
     }
