@@ -1,88 +1,50 @@
 using System;
 using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 Solution sol = new Solution();
-string result;
 
-// result = sol.LongestPalindrome("nxabaxzcbc");
-// Console.WriteLine($"Longest: {result}");
-// result = sol.LongestPalindrome("babad");
-// Console.WriteLine($"Longest: {result}");
-// result = sol.LongestPalindrome("cbbd");
-// Console.WriteLine($"Longest: {result}");
-// result = sol.LongestPalindrome("naabbaa");
-// Console.WriteLine($"Longest: {result}");
-// result = sol.LongestPalindrome("bb");
+var strs = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
+var result = sol.GroupAnagrams(strs);
 // Console.WriteLine($"Longest: {result}");
 
 public class Solution {
-    public string LongestPalindrome(string s) {
-        string longestPalindrome = "";
-        string oddCandidate, evenCandidate;
-
-        for (int i = 0; i < s.Length; i++) // Loop left to right
-        {
-            oddCandidate = GetPalindrome(s, i, true);
-            evenCandidate = GetPalindrome(s, i, false);
-            if (oddCandidate.Length > longestPalindrome.Length)
-            {
-                longestPalindrome = oddCandidate;
-            }
-            if (evenCandidate.Length > longestPalindrome.Length)
-            {
-                longestPalindrome = evenCandidate;
-            }
-        }
-        return longestPalindrome;
-    }
-
-    public string GetPalindrome(string s, int i, bool odd)
-    {
-        string longest = "";
-        int offset = 0;
+    public IList<IList<string>> GroupAnagrams(string[] strs) {
+        var result = new List<IList<string>>();
         
-        if (odd)
+        // Sort each string
+        for (int i = 0; i < strs.Length; i++)
         {
-            longest = s[i].ToString(); // The character itself is a palindrome in odd case
-            offset = 1;
-
-            if (i == 0 || i == s.Length-1) // At the edgs of the string
-            {
-                return longest; // Return character itself
-            }
-        } else {
-            if (i == 0) // At the left edge of the string
-            {
-                return longest; // Return character itself
-            }
+            strs[i] = string.Concat(strs[i].OrderBy(c => c));
         }
+        // Sort the array
+        Array.Sort(strs);
 
-        bool onStreak = true;
-        int distance = 1;
-        int left, right, length;
-
-        while (onStreak)
+        // Group the array
+        List<string> group = new List<string>();
+        for (int i = 0; i < strs.Length; i++)
         {
-            left = i-distance;
-            right = i+distance+offset;
-            length = right-left;
-            if (left >= 0 && right <= s.Length)
+            if (i != 0 )
             {
-                // Console.WriteLine($"We're at: {s.Substring(left, length)}");
-                if (s[left] == s[right-1])
+                if (strs[i] != strs[i-1]) // String has changed, add new group
                 {
-                    // Console.WriteLine("Palindrome!");
-                    longest = s.Substring(left, length);
-                } else
-                {
-                    // Console.WriteLine("Not Palindrome!");
-                    onStreak = false;
+                    result.Add(group);
+                    group = new List<string>();
+                    group.Add(strs[i]);
+                } else {
+                    group.Add(strs[i]);
                 }
-            } else {
-                onStreak = false;
+            } else { // First in list - add it in a new group
+                group = new List<string>();
+                group.Add(strs[i]);
             }
-            distance++;
         }
-        return longest;
+        // If group is not empty, add it to the result
+        if (group.Count > 0)
+        {
+            result.Add(group);
+        }
+        return result;
     }
 }
