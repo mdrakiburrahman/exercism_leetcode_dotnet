@@ -5,95 +5,125 @@ using System.Collections.Generic;
 
 Solution sol = new Solution();
 
-// var matrix = new int[][] {
-//     new int[] {1, 2, 3},
-//     new int[] {4, 5, 6},
-//     new int[] {7, 8, 9}
-// };
-
 var matrix = new int[][] {
-    new int[] {5, 1, 9, 11},
-    new int[] {2, 4, 8, 10},
-    new int[] {13, 3, 6, 7},
-    new int[] {15, 14, 12, 16}
+    new int[] {1, 2, 3, 4},
+    new int[] {5, 6, 7, 8},
+    new int[] {9, 10, 11, 12}
 };
 
-Console.WriteLine("");
+Console.WriteLine("original: ");
 sol.PrintMatrix(matrix);
-sol.Rotate(matrix);
+
+var ret = sol.SpiralOrder(matrix);
+
 Console.WriteLine("");
+Console.WriteLine("returned: ");
+
+// Print the result
+foreach (var item in ret)
+{
+    Console.Write(item + " ");
+}
+
+
+Console.WriteLine("");
+Console.WriteLine("original: ");
 sol.PrintMatrix(matrix);
 
 public class Solution {
-    public struct Coordinates {
-        public int X;
-        public int Y;
-    }
+    struct matrix {
+        public  int m, n; // m rows, n columns
+        public  int[][] grid;
+        public  int r, c; // Indices - zero indexed
+        public  string direction; // Starting direction
 
-    public struct Position {
-        public int Value;
-        public Coordinates Coord;
-    }
+        public matrix(int[][] g) {
+            this.grid = g;
+            this.m = g.Length;
+            this.n = g[0].Length;
+            this.r = 0;
+            this.c = 0;
+            this.direction = "right";
+        }
 
-    public void Rotate(int[][] matrix) {
-        int length = matrix.Length;
-
-        Coordinates start = new Coordinates { X = 0, Y = 0 };
-        Coordinates end = new Coordinates { X = 0, Y = length - 1 };
-
-        Queue<Position> q = new Queue<Position>();
-
-        while (start.X <= end.X && start.Y <= end.Y) {
-            if ((start.X == end.X ) && (start.Y == end.Y)) {
-                break;
+        public void Move() {
+            switch (this.direction) {
+                case "right":
+                    this.MoveRight();
+                    break;
+                case "down":
+                    this.MoveDown();
+                    break;
+                case "left":
+                    this.MoveLeft();
+                    break;
+                case "up":
+                    this.MoveUp();
+                    break;
             }
+        }
 
-            // Add stuff to stack
-            for (int i = start.Y; i <= end.Y; i++) {
-                Position p = new Position {
-                    Value = matrix[start.X][i],
-                    Coord = new Coordinates { X = start.X, Y = i }
-                };
-
-                q.Enqueue(p);
-                
-                // Null out the value in the matrix using a large negative int
-                matrix[start.X][i] = int.MinValue;
+        public void MoveDown() {
+            if (c < m - 1) {
+                c++;
+                return;
+            } else {
+                direction = "left";
+                r--;
+                return;
             }
-
-            // Loop until stack is empty
-            while (q.Count > 0) {
-                Position p = q.Dequeue();                
-                Coordinates p_new = Transpose(p.Coord, length);
-
-                // Queue old values that we are about to replace
-                Position temp = new Position {
-                    Value = matrix[p_new.X][p_new.Y],
-                    Coord = p_new
-                };
-                
-                if (temp.Value != int.MinValue) {
-                    q.Enqueue(temp);
-                }
-
-                // Insert into matrix
-                matrix[p_new.X][p_new.Y] = p.Value;
+        }
+        public void MoveUp() {
+            if (c > 0) {
+                c--;
+                return;
+            } else {
+                direction = "right";
+                r++;
+                return;
             }
-
-            // Enter inner loop
-            start.X++;
-            start.Y++;
-            end.X++;
-            end.Y--;
+        }
+        public void MoveLeft() {
+            if (r > 0) {
+                r--;
+                return;
+            } else {
+                direction = "up";
+                c--;
+                return;
+            }
+        }
+        public void MoveRight() {
+            if (r < n - 1) {
+                r++;
+                return;
+            } else {
+                direction = "down";
+                c++;
+                return;
+            }
         }
     }
 
-    public Coordinates Transpose (Coordinates c, int length) {
-        return new Coordinates { X = c.Y, Y = length - c.X - 1 };
+    public IList<int> SpiralOrder(int[][] grid) {        
+        // Initialize matrix
+        var m = new matrix(grid);
+
+        // New return variable
+        var ret = new List<int>();
+
+        // Loop until we've visited all elements
+        for (int i = 1; i <= (m.m * m.n); i++)
+        {
+            ret.Add(m.grid[m.c][m.r]);
+            m.Move();
+        }
+        
+        return ret;
     }
 
-    public void PrintMatrix(int[][] matrix) {
-        foreach (var row in matrix) {
+    public void PrintMatrix(int[][] grid) {
+        foreach (var row in grid) {
             Console.WriteLine(string.Join(" ", row));
         }
     }
