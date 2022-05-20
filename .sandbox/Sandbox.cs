@@ -5,10 +5,24 @@ using System.Collections.Generic;
 
 Solution sol = new Solution();
 
+// var matrix = new int[][] {
+//     new int[] {1, 2, 3, 4},
+//     new int[] {5, 6, 7, 8},
+//     new int[] {9, 10, 11, 12}
+// };
+
+// var matrix = new int[][] {
+//     new int[] {1, 2, 3},
+//     new int[] {4, 5, 6},
+//     new int[] {7, 8, 9}
+// };
+
 var matrix = new int[][] {
-    new int[] {1, 2, 3, 4},
-    new int[] {5, 6, 7, 8},
-    new int[] {9, 10, 11, 12}
+    new int[] {1, 2, 3, 4, 5},
+    new int[] {6, 7, 8, 9, 10},
+    new int[] {11, 12, 13, 14, 15},
+    new int[] {16, 17, 18, 19, 20},
+    new int[] {21, 22, 23, 24, 25}
 };
 
 Console.WriteLine("original: ");
@@ -25,6 +39,8 @@ foreach (var item in ret)
     Console.Write(item + " ");
 }
 
+
+Console.WriteLine("");
 Console.WriteLine("\n\noriginal: ");
 sol.PrintMatrix(matrix);
 
@@ -33,9 +49,9 @@ public class Solution {
         public  int m, n; // m rows, n columns
         public  int[][] grid;
         public  int r, c; // Indices - zero indexed
-        public int r_ceil, c_ceil; // Boundary counter
-        public int rounds; // Number of rounds
-        public string direction; // Starting direction
+        public  string direction; // Starting direction
+        public int[] r_bound, c_bound; // Boundaries for the current row and column
+        public int hits; // Number of times we've hit a boundary
 
         public matrix(int[][] g) {
             this.grid = g;
@@ -44,12 +60,12 @@ public class Solution {
             this.r = 0;
             this.c = 0;
             this.direction = "right";
-            this.r_ceil = this.n -1;
-            this.c_ceil = this.m - 1;
-            this.rounds = 1;
+            this.r_bound = new int[] {0, n - 1};
+            this.c_bound = new int[] {0, m - 1};
+            this.hits = 0;
         }
 
-        public void Move() {
+        public void Move() {            
             switch (this.direction) {
                 case "right":
                     this.MoveRight();
@@ -67,76 +83,73 @@ public class Solution {
         }
 
         public void MoveDown() {
-            if (c_move > 0) {
-                c_move--;
+            if (CheckBoundary() && c != c_bound[1]) {
                 c++;
                 return;
             } else {
-                // Decrement & Reset
-                hits--;
-                m--;
-                c_move = m;
-                
-                // Switch direction               
                 direction = "left";
                 r--;
-                r_move--;
+                IncrementHits();
                 return;
             }
         }
         public void MoveUp() {
-            if (c_move > 0) {
-                c_move--;
+            if (CheckBoundary() && c != c_bound[0]) {
                 c--;
                 return;
             } else {
-                // Decrement & Reset
-                hits--;
-                m--;
-                c_move = m;
-                
-                // Switch direction
                 direction = "right";
                 r++;
-                r_move--;
+                IncrementHits();
                 return;
             }
         }
         public void MoveLeft() {
-            if (r_move > 0) {
-                r_move--;
+            if (CheckBoundary() && r != r_bound[0]) {
                 r--;
                 return;
             } else {
-                // Decrement & Reset
-                hits--;
-                n--;
-                r_move = n;
-
-                // Switch direction
                 direction = "up";
                 c--;
-                c_move--;
+                IncrementHits();
                 return;
             }
         }
         public void MoveRight() {
-            if (r_move > 0) {
-                r_move--;
+            if (CheckBoundary() && r != r_bound[1]) {
                 r++;
                 return;
             } else {
-                // Decrement & Reset
-                hits--;
-                n--;
-                r_move = n;
-
-                // Switch direction
                 direction = "down";
                 c++;
-                c_move--;
+                IncrementHits();
                 return;
             }
+        }
+        public void IncrementHits(){
+            hits++;
+            if(hits >= 3){
+                UpdateBounds();
+            }
+        }
+        public void UpdateBounds(){
+            switch (direction) {
+                case "up":
+                    c_bound[0]++;
+                    break;
+                case "down":
+                    c_bound[1]--;
+                    break;
+                case "left":
+                    r_bound[0]++;
+                    break;
+                case "right":
+                    r_bound[1]--;
+                    break;
+            }
+        }
+        public bool CheckBoundary(){
+            return (r >= r_bound[0] && r <= r_bound[1]) && (c >= c_bound[0] && c <= c_bound[1]);
         }
     }
 
@@ -147,11 +160,8 @@ public class Solution {
         // New return variable
         var ret = new List<int>();
 
-        // Number of dimensions - we calculate this because m and n will change as we reduce the boundary
-        var dims = grid.Length * grid[0].Length;
-
         // Loop until we've visited all elements
-        for (int i = 1; i <= dims; i++)
+        for (int i = 1; i <= (m.m * m.n); i++)
         {
             ret.Add(m.grid[m.c][m.r]);
             m.Move();
