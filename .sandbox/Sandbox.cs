@@ -27,7 +27,7 @@ foreach (var item in ret)
 
 
 Console.WriteLine("");
-Console.WriteLine("original: ");
+Console.WriteLine("\n\noriginal: ");
 sol.PrintMatrix(matrix);
 
 public class Solution {
@@ -36,6 +36,8 @@ public class Solution {
         public  int[][] grid;
         public  int r, c; // Indices - zero indexed
         public  string direction; // Starting direction
+        public int[] r_bound, c_bound; // Boundaries for the current row and column
+        public int hits; // Number of times we've hit a boundary
 
         public matrix(int[][] g) {
             this.grid = g;
@@ -44,6 +46,9 @@ public class Solution {
             this.r = 0;
             this.c = 0;
             this.direction = "right";
+            this.r_bound = new int[] {0, n - 1};
+            this.c_bound = new int[] {0, m - 1};
+            this.hits = 0;
         }
 
         public void Move() {
@@ -70,6 +75,7 @@ public class Solution {
             } else {
                 direction = "left";
                 r--;
+                IncrementHits();
                 return;
             }
         }
@@ -80,6 +86,7 @@ public class Solution {
             } else {
                 direction = "right";
                 r++;
+                IncrementHits();
                 return;
             }
         }
@@ -90,6 +97,7 @@ public class Solution {
             } else {
                 direction = "up";
                 c--;
+                IncrementHits();
                 return;
             }
         }
@@ -100,7 +108,32 @@ public class Solution {
             } else {
                 direction = "down";
                 c++;
+
+                hits++;
+
                 return;
+            }
+        }
+        public void IncrementHits(){
+            hits++;
+            if(hits >= 3){
+                UpdateBounds();
+            }
+        }
+        public void UpdateBounds(){
+            switch (direction) {
+                case "up":
+                    c_bound[0]++;
+                    break;
+                case "down":
+                    c_bound[1]--;
+                    break;
+                case "left":
+                    r_bound[0]++;
+                    break;
+                case "right":
+                    r_bound[1]--;
+                    break;
             }
         }
     }
