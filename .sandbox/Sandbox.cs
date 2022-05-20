@@ -5,10 +5,24 @@ using System.Collections.Generic;
 
 Solution sol = new Solution();
 
+// var matrix = new int[][] {
+//     new int[] {1, 2, 3, 4},
+//     new int[] {5, 6, 7, 8},
+//     new int[] {9, 10, 11, 12}
+// };
+
+// var matrix = new int[][] {
+//     new int[] {1, 2, 3},
+//     new int[] {4, 5, 6},
+//     new int[] {7, 8, 9}
+// };
+
 var matrix = new int[][] {
-    new int[] {1, 2, 3, 4},
-    new int[] {5, 6, 7, 8},
-    new int[] {9, 10, 11, 12}
+    new int[] {1, 2, 3, 4, 5},
+    new int[] {6, 7, 8, 9, 10},
+    new int[] {11, 12, 13, 14, 15},
+    new int[] {16, 17, 18, 19, 20},
+    new int[] {21, 22, 23, 24, 25}
 };
 
 Console.WriteLine("original: ");
@@ -51,7 +65,7 @@ public class Solution {
             this.hits = 0;
         }
 
-        public void Move() {
+        public void Move() {            
             switch (this.direction) {
                 case "right":
                     this.MoveRight();
@@ -69,7 +83,7 @@ public class Solution {
         }
 
         public void MoveDown() {
-            if (c < m - 1) {
+            if (CheckBoundary() && c != c_bound[1]) {
                 c++;
                 return;
             } else {
@@ -80,7 +94,7 @@ public class Solution {
             }
         }
         public void MoveUp() {
-            if (c > 0) {
+            if (CheckBoundary() && c != c_bound[0]) {
                 c--;
                 return;
             } else {
@@ -91,7 +105,7 @@ public class Solution {
             }
         }
         public void MoveLeft() {
-            if (r > 0) {
+            if (CheckBoundary() && r != r_bound[0]) {
                 r--;
                 return;
             } else {
@@ -102,15 +116,13 @@ public class Solution {
             }
         }
         public void MoveRight() {
-            if (r < n - 1) {
+            if (CheckBoundary() && r != r_bound[1]) {
                 r++;
                 return;
             } else {
                 direction = "down";
                 c++;
-
-                hits++;
-
+                IncrementHits();
                 return;
             }
         }
@@ -135,6 +147,9 @@ public class Solution {
                     r_bound[1]--;
                     break;
             }
+        }
+        public bool CheckBoundary(){
+            return (r >= r_bound[0] && r <= r_bound[1]) && (c >= c_bound[0] && c <= c_bound[1]);
         }
     }
 
