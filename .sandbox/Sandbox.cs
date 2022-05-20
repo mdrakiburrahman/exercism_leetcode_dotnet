@@ -25,9 +25,7 @@ foreach (var item in ret)
     Console.Write(item + " ");
 }
 
-
-Console.WriteLine("");
-Console.WriteLine("original: ");
+Console.WriteLine("\n\noriginal: ");
 sol.PrintMatrix(matrix);
 
 public class Solution {
@@ -35,6 +33,8 @@ public class Solution {
         public  int m, n; // m rows, n columns
         public  int[][] grid;
         public  int r, c; // Indices - zero indexed
+        public int hits; // Number of times we've hit edges
+        public int r_move, c_move; // Boundary counter
         public  string direction; // Starting direction
 
         public matrix(int[][] g) {
@@ -44,6 +44,9 @@ public class Solution {
             this.r = 0;
             this.c = 0;
             this.direction = "right";
+            this.hits = 3;
+            this.r_move = this.n;
+            this.r_move = this.m;
         }
 
         public void Move() {
@@ -68,6 +71,10 @@ public class Solution {
                 c++;
                 return;
             } else {
+                hits--;
+                if (hits <= 0) {
+                    n--; // Reduce boundary   
+                }
                 direction = "left";
                 r--;
                 return;
@@ -78,6 +85,10 @@ public class Solution {
                 c--;
                 return;
             } else {
+                hits--;
+                if (hits <= 0) {
+                    n--; // Reduce boundary   
+                }
                 direction = "right";
                 r++;
                 return;
@@ -88,6 +99,10 @@ public class Solution {
                 r--;
                 return;
             } else {
+                hits--;
+                if (hits <= 0) {
+                    m--; // Reduce boundary   
+                }
                 direction = "up";
                 c--;
                 return;
@@ -98,6 +113,10 @@ public class Solution {
                 r++;
                 return;
             } else {
+                hits--;
+                if (hits <= 0) {
+                    m--; // Reduce boundary   
+                }
                 direction = "down";
                 c++;
                 return;
@@ -112,8 +131,11 @@ public class Solution {
         // New return variable
         var ret = new List<int>();
 
+        // Number of dimensions - we calculate this because m and n will change as we reduce the boundary
+        var dims = m.m * m.n;
+
         // Loop until we've visited all elements
-        for (int i = 1; i <= (m.m * m.n); i++)
+        for (int i = 1; i <= dims; i++)
         {
             ret.Add(m.grid[m.c][m.r]);
             m.Move();
