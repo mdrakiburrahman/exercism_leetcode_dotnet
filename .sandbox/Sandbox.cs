@@ -33,9 +33,9 @@ public class Solution {
         public  int m, n; // m rows, n columns
         public  int[][] grid;
         public  int r, c; // Indices - zero indexed
-        public int hits; // Number of times we've hit edges
-        public int r_move, c_move; // Boundary counter
-        public  string direction; // Starting direction
+        public int r_ceil, c_ceil; // Boundary counter
+        public int rounds; // Number of rounds
+        public string direction; // Starting direction
 
         public matrix(int[][] g) {
             this.grid = g;
@@ -44,9 +44,9 @@ public class Solution {
             this.r = 0;
             this.c = 0;
             this.direction = "right";
-            this.hits = 3;
-            this.r_move = this.n;
-            this.r_move = this.m;
+            this.r_ceil = this.n -1;
+            this.c_ceil = this.m - 1;
+            this.rounds = 1;
         }
 
         public void Move() {
@@ -67,58 +67,74 @@ public class Solution {
         }
 
         public void MoveDown() {
-            if (c < m - 1) {
+            if (c_move > 0) {
+                c_move--;
                 c++;
                 return;
             } else {
+                // Decrement & Reset
                 hits--;
-                if (hits <= 0) {
-                    n--; // Reduce boundary   
-                }
+                m--;
+                c_move = m;
+                
+                // Switch direction               
                 direction = "left";
                 r--;
+                r_move--;
                 return;
             }
         }
         public void MoveUp() {
-            if (c > 0) {
+            if (c_move > 0) {
+                c_move--;
                 c--;
                 return;
             } else {
+                // Decrement & Reset
                 hits--;
-                if (hits <= 0) {
-                    n--; // Reduce boundary   
-                }
+                m--;
+                c_move = m;
+                
+                // Switch direction
                 direction = "right";
                 r++;
+                r_move--;
                 return;
             }
         }
         public void MoveLeft() {
-            if (r > 0) {
+            if (r_move > 0) {
+                r_move--;
                 r--;
                 return;
             } else {
+                // Decrement & Reset
                 hits--;
-                if (hits <= 0) {
-                    m--; // Reduce boundary   
-                }
+                n--;
+                r_move = n;
+
+                // Switch direction
                 direction = "up";
                 c--;
+                c_move--;
                 return;
             }
         }
         public void MoveRight() {
-            if (r < n - 1) {
+            if (r_move > 0) {
+                r_move--;
                 r++;
                 return;
             } else {
+                // Decrement & Reset
                 hits--;
-                if (hits <= 0) {
-                    m--; // Reduce boundary   
-                }
+                n--;
+                r_move = n;
+
+                // Switch direction
                 direction = "down";
                 c++;
+                c_move--;
                 return;
             }
         }
@@ -132,7 +148,7 @@ public class Solution {
         var ret = new List<int>();
 
         // Number of dimensions - we calculate this because m and n will change as we reduce the boundary
-        var dims = m.m * m.n;
+        var dims = grid.Length * grid[0].Length;
 
         // Loop until we've visited all elements
         for (int i = 1; i <= dims; i++)
