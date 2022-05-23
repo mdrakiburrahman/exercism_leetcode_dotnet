@@ -10,30 +10,6 @@
  * }
  */
 
-// Iterative
-// Time: O(n)
-// Space: O(1)
-
-// public class Solution {
-//     public ListNode ReverseList(ListNode head) {
-//         ListNode prev = null;
-//         ListNode curr = head;
-//         while(curr != null)
-//         {
-//             ListNode next = curr.next;
-//             curr.next = prev;
-//             prev = curr;
-//             curr = next;
-//         }
-            
-//         return prev;
-//     }
-// }
-
-// Recursive
-// Time: O(n)
-// Space: O(n)
-
 public class Solution {
     public ListNode ReverseList(ListNode head) {
         if (head == null || head.next == null)
@@ -47,6 +23,3 @@ public class Solution {
         return newHead;
     }
 }
-
-
-
