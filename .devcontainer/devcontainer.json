@@ -1,51 +1,107 @@
 {
-	"name": "Dotnet Container",
-	"dockerFile": "Dockerfile",
-	"overrideCommand": false,
-
-    // Mount to Docker
-    "mounts": [
-		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-		"source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
-	],
-	"runArgs": [
-		"--cap-add=SYS_PTRACE",
-		"--security-opt",
-		"seccomp=unconfined",
-		"--env-file=.devcontainer/devcontainer.env"
-	],
-	
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "/usr/bin/bash"
-			}
-		},
-		"terminal.integrated.defaultProfile.linux": "bash" // Start with bourne shell
-	},
-	
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-        // Azure stuff
-		"ms-vscode.azurecli",
-        "ms-azuretools.vscode-docker",
-        // Github stuff
-		"github.copilot",
-		// Dotnet stuff
-		"ms-dotnettools.vscode-dotnet-runtime",
-		"ms-dotnettools.csharp",
-		// VSCode stuff
-		"esbenp.prettier-vscode",
-		"wakatime.vscode-wakatime"
-	],
-	
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode",
-	"build": {
-		"args": {
-			"UPGRADE_PACKAGES": "true"
-		}
-	}
-	
+  "name": "Ubuntu",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [],
+  "runArgs": ["--privileged", "--env-file=.devcontainer/devcontainer.env"],
+  // Features we'd like to add from VS Code's GitHub Repository:
+  // https://github.com/microsoft/vscode-dev-containers/tree/main/script-library/docs
+  "features": {
+    "common": {
+      "username": "automatic",
+      "uid": "automatic",
+      "gid": "automatic",
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true,
+      "nonFreePackages": false
+    },
+    "docker-from-docker": {
+      "version": "5:20.10*",
+      "moby": false
+    },
+    "dotnet": {
+      "version": "6.0",
+      "runtimeOnly": false
+    },
+    "git": {
+      "version": "os-provided",
+      "ppa": false
+    },
+    "node": {
+      "version": "lts",
+      "nodeGypDependencies": true
+    }
+  },
+  // Various mounting, run, post-create, and user settings
+  "containerEnv": {
+    "SSH_AUTH_SOCK": "{localEnv:SSH_AUTH_SOCK}"
+  },
+  "postAttachCommand": "/tmp/scripts/post-attach-commands.sh",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    // Editor
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    // Terminal
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash"
+      },
+      "zsh": {
+        "path": "zsh"
+      },
+      "fish": {
+        "path": "fish"
+      },
+      "tmux": {
+        "path": "tmux",
+        "icon": "terminal-tmux"
+      },
+      "pwsh": {
+        "path": "pwsh",
+        "icon": "terminal-powershell"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    // C#
+    "csharp.format.enable": true,
+    "omnisharp.path": "latest",
+    "omnisharp.organizeImportsOnFormat": true,
+    "omnisharp.enableImportCompletion": true,
+    "omnisharp.useModernNet": true
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "DavidAnson.vscode-markdownlint",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "golang.go",
+    "ms-azure-devops.azure-pipelines",
+    "ms-azuretools.vscode-docker",
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.vscode-dotnet-runtime",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "mindaro.mindaro",
+    "ms-python.vscode-pylance",
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "ms-vsliveshare.vsliveshare-pack",
+    "streetsidesoftware.code-spell-checker",
+    "waderyan.gitblame",
+    "shd101wyy.markdown-preview-enhanced",
+    "zxh404.vscode-proto3",
+    "Gruntfuggly.todo-tree", // Highlights TODO comments in code
+    "github.copilot", // Copilot integration
+    "spikespaz.vscode-smoothtype", // Smooth cursor animation
+    "IBM.output-colorizer", // Colorize your output/test logs
+    "hashicorp.terraform", // Terraform syntax highlighting
+    "redhat.vscode-yaml", // Kubernetes manifest syntax highlighting
+    "stkb.rewrap", // "Alt + Q" -> rewrap comments after n characters on one line
+    "tyriar.sort-lines", // "Ctrl + Shift + P -> Sort lines" -> sort lines alphabetically
+    "esbenp.prettier-vscode", // A pretty good formatter for many languages
+    "marp-team.marp-vscode", // PowerPoints - but with code
+    "huntertran.auto-markdown-toc" // Auto-generated Markdown Table of Contents
+  ]
 }
